@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LM10 Micro SaaS - Soluções inteligentes para seu PC e dia a dia</title>
+    <title>LM10 Solutions - Sistemas SaaS & Soluções Empresariais</title>
     <style>
         * {
             margin: 0;
@@ -213,9 +213,9 @@
             transform: translateY(-2px);
         }
 
-        /* Daily Solutions Section */
-        .daily-solutions {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        /* Business Solutions Section */
+        .business-solutions {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 80px 20px;
             color: white;
         }
@@ -272,6 +272,67 @@
 
         .solution-whatsapp:hover {
             transform: scale(1.05);
+            color: white;
+        }
+
+        /* SaaS Development Section */
+        .saas-development {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .saas-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .saas-card {
+            background: linear-gradient(135deg, #667eea10, #764ba210);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .saas-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .saas-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .saas-card h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .saas-features {
+            list-style: none;
+            text-align: left;
+            margin: 1rem 0;
+        }
+
+        .saas-features li {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .saas-features li:before {
+            content: "→";
+            color: #667eea;
+            margin-right: 8px;
+        }
+
+        /* Daily Solutions Section */
+        .daily-solutions {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            padding: 80px 20px;
             color: white;
         }
 
@@ -462,7 +523,7 @@
 </head>
 <body>
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20ajuda%20com%20uma%20tarefa%20complicada%20no%20meu%20PC." 
+    <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20ajuda%20com%20soluções%20empresariais%20e%20sistemas%20SaaS." 
        class="whatsapp-float" 
        target="_blank">
         💬
@@ -470,12 +531,12 @@
 
     <header>
         <nav>
-            <div class="logo">LM10 Micro SaaS</div>
+            <div class="logo">LM10 Solutions</div>
             <div class="nav-links">
                 <a href="#home">Início</a>
                 <a href="#products">Produtos</a>
-                <a href="#solutions">Soluções</a>
-                <a href="#testimonials">Depoimentos</a>
+                <a href="#business">Soluções Empresariais</a>
+                <a href="#saas">Sistemas SaaS</a>
                 <a href="#contact">Contato</a>
             </div>
         </nav>
@@ -484,8 +545,8 @@
     <main class="main-content">
         <!-- Hero Section -->
         <section class="hero" id="home">
-            <h1>Soluções inteligentes para seu PC e dia a dia</h1>
-            <p>Micro SaaS criados por quem entende de desempenho. Simples, eficientes e com preço justo. Tarefas complicadas? Estamos aqui para ajudar!</p>
+            <h1>Soluções completas para seu PC e sua empresa</h1>
+            <p>Micro SaaS, sistemas empresariais, automação de tarefas administrativas e muito mais. Simplificamos a tecnologia para você!</p>
             <a href="https://mendes9923.github.io/pcturbocleaner/" class="cta-button">Conheça o PC Turbo Cleaner</a>
         </section>
 
@@ -524,45 +585,166 @@
             </div>
         </section>
 
-        <!-- Daily Solutions Section -->
-        <section class="daily-solutions" id="solutions">
-            <h2 class="section-title" style="color: white;">Soluções para o seu dia a dia</h2>
+        <!-- Business Solutions Section -->
+        <section class="business-solutions" id="business">
+            <h2 class="section-title" style="color: white;">Soluções Administrativas & Empresariais</h2>
             <div class="solutions-grid">
                 <div class="solution-card">
-                    <div class="solution-icon">🖥️</div>
-                    <h3>PC lento ou travando?</h3>
-                    <p>Otimização completa, limpeza de arquivos inúteis e configurações para melhor desempenho.</p>
-                    <a href="https://wa.me/554488464080?text=Meu%20PC%20está%20muito%20lento%20e%20travando.%20Preciso%20de%20ajuda!" class="solution-whatsapp" target="_blank">Falar no WhatsApp</a>
+                    <div class="solution-icon">📊</div>
+                    <h3>Planilhas Inteligentes</h3>
+                    <p>Automação de planilhas Excel/Google Sheets com fórmulas avançadas, macros e dashboards interativos.</p>
+                    <ul style="text-align: left; margin: 1rem 0; list-style: none;">
+                        <li>✓ Controle financeiro automatizado</li>
+                        <li>✓ Gestão de estoque em tempo real</li>
+                        <li>✓ Relatórios gerenciais automáticos</li>
+                        <li>✓ Dashboards personalizados</li>
+                    </ul>
+                    <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20uma%20planilha%20inteligente%20para%20minha%20empresa." class="solution-whatsapp" target="_blank">Solicitar Orçamento</a>
                 </div>
+
                 <div class="solution-card">
-                    <div class="solution-icon">🎮</div>
-                    <h3>Jogos com lag?</h3>
-                    <p>Configuração de modo gamer, otimização de placa de vídeo e fechamento de processos em segundo plano.</p>
-                    <a href="https://wa.me/554488464080?text=Meus%20jogos%20estão%20com%20muito%20lag.%20Podem%20ajudar%3F" class="solution-whatsapp" target="_blank">Falar no WhatsApp</a>
+                    <div class="solution-icon">💰</div>
+                    <h3>Sistema Financeiro</h3>
+                    <p>Controle completo das finanças da sua empresa:</p>
+                    <ul style="text-align: left; margin: 1rem 0; list-style: none;">
+                        <li>✓ Fluxo de caixa</li>
+                        <li>✓ Contas a pagar/receber</li>
+                        <li>✓ Conciliação bancária</li>
+                        <li>✓ DRE e relatórios fiscais</li>
+                        <li>✓ Integração com bancos</li>
+                    </ul>
+                    <a href="https://wa.me/554488464080?text=Olá!%20Quero%20um%20sistema%20financeiro%20para%20minha%20empresa." class="solution-whatsapp" target="_blank">Solicitar Orçamento</a>
                 </div>
+
                 <div class="solution-card">
-                    <div class="solution-icon">💾</div>
-                    <h3>Pouco espaço em disco?</h3>
-                    <p>Limpeza profunda, remoção de arquivos duplicados e organização de pastas.</p>
-                    <a href="https://wa.me/554488464080?text=Meu%20disco%20está%20cheio.%20Preciso%20liberar%20espaço%20urgente!" class="solution-whatsapp" target="_blank">Falar no WhatsApp</a>
+                    <div class="solution-icon">👥</div>
+                    <h3>Sistema de RH</h3>
+                    <p>Gestão completa de recursos humanos:</p>
+                    <ul style="text-align: left; margin: 1rem 0; list-style: none;">
+                        <li>✓ Controle de ponto eletrônico</li>
+                        <li>✓ Folha de pagamento</li>
+                        <li>✓ Gestão de benefícios</li>
+                        <li>✓ Recrutamento e seleção</li>
+                        <li>✓ Avaliação de desempenho</li>
+                    </ul>
+                    <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20um%20sistema%20de%20RH%20para%20minha%20empresa." class="solution-whatsapp" target="_blank">Solicitar Orçamento</a>
                 </div>
+
                 <div class="solution-card">
-                    <div class="solution-icon">🔧</div>
-                    <h3>Programas não abrem?</h3>
-                    <p>Correção de erros, reparo de arquivos do sistema e configurações avançadas.</p>
-                    <a href="https://wa.me/554488464080?text=Programas%20não%20estão%20abrindo%20no%20meu%20PC.%20Podem%20me%20ajudar%3F" class="solution-whatsapp" target="_blank">Falar no WhatsApp</a>
+                    <div class="solution-icon">📦</div>
+                    <h3>Sistema de Compras</h3>
+                    <p>Controle completo do setor de compras:</p>
+                    <ul style="text-align: left; margin: 1rem 0; list-style: none;">
+                        <li>✓ Gestão de fornecedores</li>
+                        <li>✓ Cotações e pedidos</li>
+                        <li>✓ Controle de estoque</li>
+                        <li>✓ Aprovação de compras</li>
+                        <li>✓ Relatórios de gastos</li>
+                    </ul>
+                    <a href="https://wa.me/554488464080?text=Olá!%20Quero%20um%20sistema%20de%20compras%20para%20minha%20empresa." class="solution-whatsapp" target="_blank">Solicitar Orçamento</a>
                 </div>
-                <div class="solution-card">
-                    <div class="solution-icon">🌡️</div>
-                    <h3>Superaquecimento?</h3>
-                    <p>Monitoramento de temperatura, otimização de ventilação e redução de carga do processador.</p>
-                    <a href="https://wa.me/554488464080?text=Meu%20PC%20está%20superaquecendo.%20O%20que%20fazer%3F" class="solution-whatsapp" target="_blank">Falar no WhatsApp</a>
+            </div>
+        </section>
+
+        <!-- SaaS Development Section -->
+        <section class="saas-development" id="saas">
+            <h2 class="section-title">Criação de Sistemas SaaS Personalizados</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Desenvolvemos sistemas sob medida para automatizar e otimizar processos da sua empresa</p>
+            
+            <div class="saas-grid">
+                <div class="saas-card">
+                    <div class="saas-icon">🚀</div>
+                    <h3>SaaS do Zero</h3>
+                    <p>Desenvolvimento completo do seu sistema SaaS, do planejamento ao lançamento</p>
+                    <ul class="saas-features">
+                        <li>Arquitetura escalável</li>
+                        <li>Multi-tenancy</li>
+                        <li>Planos de assinatura</li>
+                        <li>Gateway de pagamento</li>
+                        <li>Dashboard administrativo</li>
+                    </ul>
                 </div>
+
+                <div class="saas-card">
+                    <div class="saas-icon">⚙️</div>
+                    <h3>Automação de Processos</h3>
+                    <p>Automatize tarefas repetitivas e ganhe produtividade</p>
+                    <ul class="saas-features">
+                        <li>Fluxos de trabalho automáticos</li>
+                        <li>Integração com APIs</li>
+                        <li>Notificações em tempo real</li>
+                        <li>Relatórios automáticos</li>
+                        <li>Backup em nuvem</li>
+                    </ul>
+                </div>
+
+                <div class="saas-card">
+                    <div class="saas-icon">📱</div>
+                    <h3>Aplicativos Web</h3>
+                    <p>Sistemas acessíveis de qualquer lugar, 100% online</p>
+                    <ul class="saas-features">
+                        <li>Responsivo (celular/tablet/PC)</li>
+                        <li>Banco de dados em nuvem</li>
+                        <li>Alta disponibilidade</li>
+                        <li>Segurança avançada</li>
+                        <li>Suporte técnico</li>
+                    </ul>
+                </div>
+
+                <div class="saas-card">
+                    <div class="saas-icon">🔌</div>
+                    <h3>Integrações</h3>
+                    <p>Conecte seus sistemas com outras plataformas</p>
+                    <ul class="saas-features">
+                        <li>WhatsApp API</li>
+                        <li>Sistemas bancários</li>
+                        <li>Marketplaces</li>
+                        <li>ERP e CRM</li>
+                        <li>E-commerce</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://wa.me/554488464080?text=Olá!%20Quero%20criar%20um%20sistema%20SaaS%20personalizado%20para%20minha%20empresa." 
+                   class="product-button" 
+                   style="background: linear-gradient(135deg, #43e97b, #38f9d7); color: white; padding: 15px 40px;"
+                   target="_blank">
+                    💬 Fale sobre seu projeto
+                </a>
+            </div>
+        </section>
+
+        <!-- Administrative Solutions -->
+        <section class="daily-solutions">
+            <h2 class="section-title" style="color: white;">Otimize seu Tempo de Trabalho</h2>
+            <div class="solutions-grid">
                 <div class="solution-card">
-                    <div class="solution-icon">📱</div>
-                    <h3>Outros problemas?</h3>
-                    <p>Tarefas complicadas? Entre em contato! Temos solução para praticamente tudo.</p>
-                    <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20ajuda%20com%20uma%20tarefa%20complicada%20no%20meu%20PC." class="solution-whatsapp" target="_blank">Falar no WhatsApp</a>
+                    <div class="solution-icon">📈</div>
+                    <h3>Controle de Vendas</h3>
+                    <p>Sistema completo para gerenciar vendas, clientes e comissões</p>
+                    <a href="https://wa.me/554488464080?text=Olá!%20Quero%20um%20sistema%20de%20controle%20de%20vendas." class="solution-whatsapp" target="_blank">Saiba mais</a>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">📋</div>
+                    <h3>Gestão de Projetos</h3>
+                    <p>Acompanhamento de tarefas, prazos e equipes</p>
+                    <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20um%20sistema%20de%20gestão%20de%20projetos." class="solution-whatsapp" target="_blank">Saiba mais</a>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">📊</div>
+                    <h3>Dashboard Executivo</h3>
+                    <p>Visualize todos os indicadores da sua empresa em um só lugar</p>
+                    <a href="https://wa.me/554488464080?text=Olá!%20Quero%20um%20dashboard%20executivo%20personalizado." class="solution-whatsapp" target="_blank">Saiba mais</a>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">🤖</div>
+                    <h3>Automação de Tarefas</h3>
+                    <p>Robôs que executam tarefas repetitivas automaticamente</p>
+                    <a href="https://wa.me/554488464080?text=Olá!%20Quero%20automatizar%20tarefas%20na%20minha%20empresa." class="solution-whatsapp" target="_blank">Saiba mais</a>
                 </div>
             </div>
         </section>
@@ -570,16 +752,16 @@
         <!-- Support Section -->
         <section class="support-section">
             <div class="support-card">
-                <h2 style="margin-bottom: 1rem;">📞 Precisa de ajuda personalizada?</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 1rem;">Tarefas complicadas? Entre em contato direto pelo WhatsApp!</p>
+                <h2 style="margin-bottom: 1rem;">📞 Precisa de uma solução personalizada?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 1rem;">Tarefas complicadas? Sistemas complexos? Entre em contato!</p>
                 <div class="support-phone">
                     📱 (44) 98846-4080
                 </div>
-                <p style="margin: 1.5rem 0;">Atendimento rápido e especializado para resolver seus problemas de PC.</p>
-                <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20ajuda%20especializada%20com%20meu%20PC." 
+                <p style="margin: 1.5rem 0;">Atendimento especializado para criar a solução perfeita para seu negócio.</p>
+                <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20uma%20solução%20personalizada%20para%20minha%20empresa." 
                    class="support-whatsapp" 
                    target="_blank">
-                    💬 Falar no WhatsApp agora
+                    💬 Falar com especialista
                 </a>
             </div>
         </section>
@@ -592,16 +774,16 @@
                     <div>Usuários ativos</div>
                 </div>
                 <div class="trust-item">
+                    <div class="trust-number">+50</div>
+                    <div>Sistemas desenvolvidos</div>
+                </div>
+                <div class="trust-item">
                     <div class="trust-number">24/7</div>
                     <div>Suporte dedicado</div>
                 </div>
                 <div class="trust-item">
                     <div class="trust-number">100%</div>
-                    <div>Seguro e confiável</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-number">Única</div>
-                    <div>Pagamento vitalício</div>
+                    <div>Personalizável</div>
                 </div>
             </div>
         </section>
@@ -611,32 +793,34 @@
             <h2 class="section-title">O que nossos clientes dizem</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <p>"Meu computador estava muito lento para abrir programas. Depois que usei o PC Turbo Cleaner PRO, ele ficou muito mais rápido. Valeu muito a pena pelo preço."</p>
-                    <div class="testimonial-author">- João Silva</div>
+                    <p>"O sistema financeiro que desenvolveram para minha empresa otimizou 80% do tempo que gastava com planilhas. Recomendo!"</p>
+                    <div class="testimonial-author">- Carlos Eduardo, Empresário</div>
                 </div>
                 <div class="testimonial-card">
-                    <p>"Liberou bastante espaço no meu HD e o PC voltou a funcionar bem melhor. Encontrou arquivos inúteis que eu nem sabia que existiam!"</p>
-                    <div class="testimonial-author">- Pedro Oliveira</div>
+                    <p>"Precisava de um sistema de RH personalizado e eles entregaram além do esperado. Suporte excelente!"</p>
+                    <div class="testimonial-author">- Ana Paula, Gestora de RH</div>
                 </div>
                 <div class="testimonial-card">
-                    <p>"Muito fácil de usar. Meu computador inicializa mais rápido agora. Por R$9,99 é um excelente investimento."</p>
-                    <div class="testimonial-author">- Maria Santos</div>
+                    <p>"O PC Turbo Cleaner salvou meu computador. Rápido, fácil e barato. Agora estou pensando em automatizar minha empresa com eles."</p>
+                    <div class="testimonial-author">- Ricardo Mendes, Autônomo</div>
                 </div>
             </div>
         </section>
 
         <!-- Coming Soon -->
         <section class="featured-product" style="margin-top: 40px;">
-            <h2 class="section-title">Em Breve</h2>
+            <h2 class="section-title">Próximos Lançamentos</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center;">
-                    <h3 style="margin-bottom: 1rem;">PC Backup Auto</h3>
-                    <p>Backup automático na nuvem para seus arquivos mais importantes.</p>
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
+                    <h3 style="margin-bottom: 1rem;">SaaS Gestão Empresarial</h3>
+                    <p>Sistema completo com módulos financeiro, RH, compras e vendas integrados.</p>
                     <span style="display: inline-block; background: #e2e8f0; padding: 5px 15px; border-radius: 50px; margin-top: 1rem;">Em desenvolvimento</span>
                 </div>
                 <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center;">
-                    <h3 style="margin-bottom: 1rem;">Drive Cleaner</h3>
-                    <p>Organizador inteligente para Google Drive e armazenamento em nuvem.</p>
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤖</div>
+                    <h3 style="margin-bottom: 1rem;">Assistente Virtual</h3>
+                    <p>Chatbot inteligente para atendimento ao cliente e automação de vendas.</p>
                     <span style="display: inline-block; background: #e2e8f0; padding: 5px 15px; border-radius: 50px; margin-top: 1rem;">Em breve</span>
                 </div>
             </div>
@@ -644,25 +828,31 @@
 
         <!-- Final CTA -->
         <section class="cta-section">
-            <h2>Pronto para dar uma sobrevida ao seu PC?</h2>
-            <p>Experimente o PC Turbo Cleaner PRO com garantia de satisfação.</p>
-            <a href="https://mendes9923.github.io/pcturbocleaner/" class="cta-button">Quero acelerar meu PC agora!</a>
+            <h2>Pronto para transformar sua empresa?</h2>
+            <p>Soluções personalizadas que realmente funcionam para o seu negócio.</p>
+            <a href="https://wa.me/554488464080?text=Olá!%20Quero%20transformar%20minha%20empresa%20com%20soluções%20personalizadas." 
+               class="cta-button" 
+               style="background: white; color: #667eea;"
+               target="_blank">
+                💬 Fale conosco agora
+            </a>
         </section>
     </main>
 
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-section">
-                <h4>LM10 Micro SaaS</h4>
-                <p>Soluções simples e eficientes para melhorar o desempenho do seu computador.</p>
+                <h4>LM10 Solutions</h4>
+                <p>Soluções completas em tecnologia para seu PC e sua empresa. Desenvolvimento de sistemas SaaS, automação e muito mais.</p>
                 <p style="margin-top: 1rem;">📱 WhatsApp: (44) 98846-4080</p>
             </div>
             <div class="footer-section">
-                <h4>Links Rápidos</h4>
-                <a href="#home">Início</a>
-                <a href="#products">Produtos</a>
-                <a href="#solutions">Soluções</a>
-                <a href="https://mendes9923.github.io/pcturbocleaner/">PC Turbo Cleaner PRO</a>
+                <h4>Soluções</h4>
+                <a href="#products">PC Turbo Cleaner PRO</a>
+                <a href="#business">Sistemas Financeiros</a>
+                <a href="#business">Sistemas de RH</a>
+                <a href="#business">Sistemas de Compras</a>
+                <a href="#saas">Criação de SaaS</a>
             </div>
             <div class="footer-section">
                 <h4>Contato</h4>
@@ -673,7 +863,7 @@
             </div>
         </div>
         <div class="copyright">
-            © 2025 LM10 Micro SaaS. Todos os direitos reservados. | Atendimento: (44) 98846-4080
+            © 2024 LM10 Solutions. Todos os direitos reservados. | Atendimento: (44) 98846-4080
         </div>
     </footer>
 </body>
