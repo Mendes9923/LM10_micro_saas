@@ -195,7 +195,155 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        /* ===== NOVA SEÇÃO: PRODUTO CONSÓRCIOS ===== */
+        /* ===== PRODUTO: DASHBOARD RISCO DE CRÉDITO ===== */
+        .risk-product {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .risk-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            color: white;
+        }
+
+        .risk-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .risk-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .risk-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .risk-badge {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .risk-content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .risk-features h3,
+        .risk-demo h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .risk-features ul {
+            list-style: none;
+        }
+
+        .risk-features li {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .risk-features li:before {
+            content: "📊";
+            font-size: 1.2rem;
+        }
+
+        .demo-container-risk {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .simulador-risk {
+            background: rgba(255,255,255,0.15);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .simulador-risk input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .simulador-risk button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s;
+        }
+
+        .simulador-risk button:hover {
+            transform: translateY(-2px);
+        }
+
+        .resultado-simulacao-risk {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .resultado-simulacao-risk .valor {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .risk-cta {
+            grid-column: span 2;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .risk-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+        }
+
+        .risk-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Consorcio Product */
         .consorcio-product {
             max-width: 1200px;
             margin: 80px auto;
@@ -219,11 +367,6 @@
         .consorcio-header h2 {
             font-size: 2.5rem;
             margin-bottom: 10px;
-        }
-
-        .consorcio-header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
         }
 
         .consorcio-badge {
@@ -266,59 +409,6 @@
             font-size: 1.2rem;
         }
 
-        .demo-container {
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .simulador {
-            background: rgba(255,255,255,0.15);
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .simulador input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-
-        .simulador button {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: transform 0.3s;
-        }
-
-        .simulador button:hover {
-            transform: translateY(-2px);
-        }
-
-        .resultado-simulacao {
-            margin-top: 15px;
-            padding: 15px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .resultado-simulacao .valor {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ffd700;
-        }
-
         .consorcio-cta {
             grid-column: span 2;
             text-align: center;
@@ -336,11 +426,6 @@
             font-weight: bold;
             font-size: 1.1rem;
             transition: transform 0.3s;
-        }
-
-        .consorcio-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         /* Iframe Container */
@@ -369,11 +454,6 @@
             gap: 10px;
         }
 
-        .iframe-header span {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
         .open-new-tab {
             background: #667eea;
             color: white;
@@ -386,11 +466,6 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-        }
-
-        .open-new-tab:hover {
-            background: #764ba2;
-            transform: translateY(-2px);
         }
 
         .wakeup-alert {
@@ -506,10 +581,6 @@
             transition: transform 0.3s;
         }
 
-        .product-button:hover {
-            transform: translateY(-2px);
-        }
-
         /* Business Solutions Section */
         .business-solutions {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -550,11 +621,6 @@
             margin-bottom: 1rem;
         }
 
-        .solution-card p {
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-        }
-
         .solution-whatsapp {
             display: inline-block;
             padding: 10px 25px;
@@ -565,11 +631,6 @@
             font-weight: bold;
             transition: transform 0.3s;
             margin-top: 1rem;
-        }
-
-        .solution-whatsapp:hover {
-            transform: scale(1.05);
-            color: white;
         }
 
         /* SaaS Development Section */
@@ -609,30 +670,6 @@
             color: #667eea;
         }
 
-        .saas-features {
-            list-style: none;
-            text-align: left;
-            margin: 1rem 0;
-        }
-
-        .saas-features li {
-            margin: 0.5rem 0;
-            font-size: 0.9rem;
-        }
-
-        .saas-features li:before {
-            content: "→";
-            color: #667eea;
-            margin-right: 8px;
-        }
-
-        /* Daily Solutions Section */
-        .daily-solutions {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            padding: 80px 20px;
-            color: white;
-        }
-
         /* Support Section */
         .support-section {
             background: white;
@@ -665,12 +702,6 @@
             font-weight: bold;
             font-size: 1.2rem;
             transition: transform 0.3s;
-        }
-
-        .support-whatsapp:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-            color: white;
         }
 
         /* Trust Badges */
@@ -798,33 +829,22 @@
             }
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
             }
-
             .product-card {
                 grid-template-columns: 1fr;
             }
-
-            .consorcio-content {
+            .risk-content, .consorcio-content {
                 grid-template-columns: 1fr;
             }
-
             .nav-links {
                 display: none;
             }
-
             .support-phone {
                 font-size: 1.5rem;
             }
-            
-            .iframe-header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
             iframe {
                 height: 500px;
             }
@@ -845,6 +865,7 @@
             <div class="nav-links">
                 <a href="#home">Início</a>
                 <a href="#free">Grátis</a>
+                <a href="#risk">Risco</a>
                 <a href="#consorcio">Consórcios</a>
                 <a href="#products">Produtos</a>
                 <a href="#business">Soluções</a>
@@ -893,7 +914,57 @@
             </div>
         </section>
 
-        <!-- ===== NOVO PRODUTO: GERENCIAMENTO DE CONSÓRCIOS ===== -->
+        <!-- ===== NOVO PRODUTO: DASHBOARD RISCO DE CRÉDITO ===== -->
+        <section class="risk-product" id="risk">
+            <div class="risk-card">
+                <div class="risk-header">
+                    <h2>📊 Dashboard Risco de Crédito</h2>
+                    <p>Análise completa de carteira, inadimplência e score de crédito</p>
+                    <div class="risk-badge">🔥 Sistema Web Completo</div>
+                </div>
+                <div class="risk-content">
+                    <div class="risk-features">
+                        <h3>🚀 Funcionalidades</h3>
+                        <ul>
+                            <li>Análise de score de crédito (Ruim a Ótimo)</li>
+                            <li>Classificação automática de risco</li>
+                            <li>Dashboard interativo com gráficos</li>
+                            <li>Ranking de clientes inadimplentes</li>
+                            <li>Análise por filial e supervisor</li>
+                            <li>Métricas de inadimplência</li>
+                            <li>Ticket médio por perfil de risco</li>
+                            <li>Exportação para Excel</li>
+                            <li>Filtros dinâmicos por período e região</li>
+                        </ul>
+                    </div>
+                    <div class="risk-demo">
+                        <h3>💡 Simulação de Score</h3>
+                        <div class="demo-container-risk">
+                            <p>Simule a classificação de risco de um cliente:</p>
+                            <div class="simulador-risk">
+                                <input type="number" id="scoreCliente" placeholder="Score do cliente (0-1000)">
+                                <button onclick="simularScore()">🔍 CLASSIFICAR RISCO</button>
+                                <div class="resultado-simulacao-risk" id="resultadoScore">
+                                    Digite um score para classificar
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="risk-cta">
+                        <a href="https://wa.me/554488464080?text=Olá!%20Tenho%20interesse%20no%20Dashboard%20de%20Risco%20de%20Crédito" 
+                           class="risk-button" 
+                           target="_blank">
+                            💬 SOLICITAR DEMONSTRAÇÃO
+                        </a>
+                        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                            🔒 Análise em tempo real | 📊 Gráficos interativos | 📥 Exportação de dados
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUTO: GERENCIAMENTO DE CONSÓRCIOS -->
         <section class="consorcio-product" id="consorcio">
             <div class="consorcio-card">
                 <div class="consorcio-header">
@@ -913,19 +984,17 @@
                             <li>Relatórios gerenciais</li>
                             <li>Controle de usuários com níveis de acesso</li>
                             <li>Backup automático do banco de dados</li>
-                            <li>Exportação para Excel/CSV</li>
-                            <li>Simulação de valores de resgate</li>
                         </ul>
                     </div>
                     <div class="consorcio-demo">
                         <h3>💡 Simulação Interativa</h3>
-                        <div class="demo-container">
-                            <p>Simule o valor aproximado de uma parcela de consórcio:</p>
-                            <div class="simulador">
+                        <div class="demo-container-risk">
+                            <p>Simule o valor aproximado de uma parcela:</p>
+                            <div class="simulador-risk">
                                 <input type="number" id="valorBem" placeholder="Valor do bem (R$)">
                                 <input type="number" id="numParcelas" placeholder="Número de parcelas" value="60">
                                 <button onclick="simularParcela()">📊 SIMULAR PARCELA</button>
-                                <div class="resultado-simulacao" id="resultadoSimulacao">
+                                <div class="resultado-simulacao-risk" id="resultadoSimulacao">
                                     Preencha os valores acima
                                 </div>
                             </div>
@@ -937,9 +1006,6 @@
                            target="_blank">
                             💬 SOLICITAR DEMONSTRAÇÃO
                         </a>
-                        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
-                            🔒 Sistema seguro com controle de acesso | 📊 Dashboard completo | 💾 Backup automático
-                        </p>
                     </div>
                 </div>
             </div>
@@ -968,13 +1034,13 @@
                 <div class="wakeup-tip">
                     <div class="wakeup-tip-icon">💡</div>
                     <div style="flex: 1">
-                        <strong>Dica:</strong> Se o aplicativo não carregar em 60 segundos ou ficar em branco, <strong>clique em "Abrir em nova aba"</strong> acima. Lá você verá um botão para ativar o app manualmente.
+                        <strong>Dica:</strong> Se o aplicativo não carregar em 60 segundos ou ficar em branco, <strong>clique em "Abrir em nova aba"</strong> acima.
                     </div>
                 </div>
                 
                 <iframe 
                     src="https://uniciacaexcel-wa33jeh6gszmhbppeqrbep.streamlit.app/?embed=true"
-                    title="Unificador de Excel - LM micros saas"
+                    title="Unificador de Excel - LM10 Solutions"
                     allow="clipboard-read; clipboard-write">
                 </iframe>
             </div>
@@ -1023,54 +1089,27 @@
                     <div class="solution-icon">📊</div>
                     <h3>Planilhas Inteligentes</h3>
                     <p>Automação de planilhas Excel/Google Sheets com fórmulas avançadas, macros e dashboards interativos.</p>
-                    <ul style="text-align: left; margin: 1rem 0; list-style: none;">
-                        <li>✓ Controle financeiro automatizado</li>
-                        <li>✓ Gestão de estoque em tempo real</li>
-                        <li>✓ Relatórios gerenciais automáticos</li>
-                        <li>✓ Dashboards personalizados</li>
-                    </ul>
                     <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20uma%20planilha%20inteligente%20para%20minha%20empresa." class="solution-whatsapp" target="_blank">Solicitar Orçamento</a>
                 </div>
 
                 <div class="solution-card">
                     <div class="solution-icon">💰</div>
                     <h3>Sistema Financeiro</h3>
-                    <p>Controle completo das finanças da sua empresa:</p>
-                    <ul style="text-align: left; margin: 1rem 0; list-style: none;">
-                        <li>✓ Fluxo de caixa</li>
-                        <li>✓ Contas a pagar/receber</li>
-                        <li>✓ Conciliação bancária</li>
-                        <li>✓ DRE e relatórios fiscais</li>
-                        <li>✓ Integração com bancos</li>
-                    </ul>
+                    <p>Controle completo das finanças da sua empresa com dashboards e relatórios gerenciais.</p>
                     <a href="https://wa.me/554488464080?text=Olá!%20Quero%20um%20sistema%20financeiro%20para%20minha%20empresa." class="solution-whatsapp" target="_blank">Solicitar Orçamento</a>
                 </div>
 
                 <div class="solution-card">
                     <div class="solution-icon">👥</div>
                     <h3>Sistema de RH</h3>
-                    <p>Gestão completa de recursos humanos:</p>
-                    <ul style="text-align: left; margin: 1rem 0; list-style: none;">
-                        <li>✓ Controle de ponto eletrônico</li>
-                        <li>✓ Folha de pagamento</li>
-                        <li>✓ Gestão de benefícios</li>
-                        <li>✓ Recrutamento e seleção</li>
-                        <li>✓ Avaliação de desempenho</li>
-                    </ul>
+                    <p>Gestão completa de recursos humanos: ponto eletrônico, folha de pagamento e benefícios.</p>
                     <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20um%20sistema%20de%20RH%20para%20minha%20empresa." class="solution-whatsapp" target="_blank">Solicitar Orçamento</a>
                 </div>
 
                 <div class="solution-card">
                     <div class="solution-icon">📦</div>
                     <h3>Sistema de Compras</h3>
-                    <p>Controle completo do setor de compras:</p>
-                    <ul style="text-align: left; margin: 1rem 0; list-style: none;">
-                        <li>✓ Gestão de fornecedores</li>
-                        <li>✓ Cotações e pedidos</li>
-                        <li>✓ Controle de estoque</li>
-                        <li>✓ Aprovação de compras</li>
-                        <li>✓ Relatórios de gastos</li>
-                    </ul>
+                    <p>Controle completo do setor de compras com gestão de fornecedores e estoque.</p>
                     <a href="https://wa.me/554488464080?text=Olá!%20Quero%20um%20sistema%20de%20compras%20para%20minha%20empresa." class="solution-whatsapp" target="_blank">Solicitar Orçamento</a>
                 </div>
             </div>
@@ -1086,52 +1125,21 @@
                     <div class="saas-icon">🚀</div>
                     <h3>SaaS do Zero</h3>
                     <p>Desenvolvimento completo do seu sistema SaaS, do planejamento ao lançamento</p>
-                    <ul class="saas-features">
-                        <li>Arquitetura escalável</li>
-                        <li>Multi-tenancy</li>
-                        <li>Planos de assinatura</li>
-                        <li>Gateway de pagamento</li>
-                        <li>Dashboard administrativo</li>
-                    </ul>
                 </div>
-
                 <div class="saas-card">
                     <div class="saas-icon">⚙️</div>
                     <h3>Automação de Processos</h3>
                     <p>Automatize tarefas repetitivas e ganhe produtividade</p>
-                    <ul class="saas-features">
-                        <li>Fluxos de trabalho automáticos</li>
-                        <li>Integração com APIs</li>
-                        <li>Notificações em tempo real</li>
-                        <li>Relatórios automáticos</li>
-                        <li>Backup em nuvem</li>
-                    </ul>
                 </div>
-
                 <div class="saas-card">
                     <div class="saas-icon">📱</div>
                     <h3>Aplicativos Web</h3>
                     <p>Sistemas acessíveis de qualquer lugar, 100% online</p>
-                    <ul class="saas-features">
-                        <li>Responsivo (celular/tablet/PC)</li>
-                        <li>Banco de dados em nuvem</li>
-                        <li>Alta disponibilidade</li>
-                        <li>Segurança avançada</li>
-                        <li>Suporte técnico</li>
-                    </ul>
                 </div>
-
                 <div class="saas-card">
                     <div class="saas-icon">🔌</div>
                     <h3>Integrações</h3>
                     <p>Conecte seus sistemas com outras plataformas</p>
-                    <ul class="saas-features">
-                        <li>WhatsApp API</li>
-                        <li>Sistemas bancários</li>
-                        <li>Marketplaces</li>
-                        <li>ERP e CRM</li>
-                        <li>E-commerce</li>
-                    </ul>
                 </div>
             </div>
 
@@ -1145,40 +1153,6 @@
             </div>
         </section>
 
-        <!-- Administrative Solutions -->
-        <section class="daily-solutions">
-            <h2 class="section-title" style="color: white;">Otimize seu Tempo de Trabalho</h2>
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <div class="solution-icon">📈</div>
-                    <h3>Controle de Vendas</h3>
-                    <p>Sistema completo para gerenciar vendas, clientes e comissões</p>
-                    <a href="https://wa.me/554488464080?text=Olá!%20Quero%20um%20sistema%20de%20controle%20de%20vendas." class="solution-whatsapp" target="_blank">Saiba mais</a>
-                </div>
-
-                <div class="solution-card">
-                    <div class="solution-icon">📋</div>
-                    <h3>Gestão de Projetos</h3>
-                    <p>Acompanhamento de tarefas, prazos e equipes</p>
-                    <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20um%20sistema%20de%20gestão%20de%20projetos." class="solution-whatsapp" target="_blank">Saiba mais</a>
-                </div>
-
-                <div class="solution-card">
-                    <div class="solution-icon">📊</div>
-                    <h3>Dashboard Executivo</h3>
-                    <p>Visualize todos os indicadores da sua empresa em um só lugar</p>
-                    <a href="https://wa.me/554488464080?text=Olá!%20Quero%20um%20dashboard%20executivo%20personalizado." class="solution-whatsapp" target="_blank">Saiba mais</a>
-                </div>
-
-                <div class="solution-card">
-                    <div class="solution-icon">🤖</div>
-                    <h3>Automação de Tarefas</h3>
-                    <p>Robôs que executam tarefas repetitivas automaticamente</p>
-                    <a href="https://wa.me/554488464080?text=Olá!%20Quero%20automatizar%20tarefas%20na%20minha%20empresa." class="solution-whatsapp" target="_blank">Saiba mais</a>
-                </div>
-            </div>
-        </section>
-
         <!-- Support Section -->
         <section class="support-section">
             <div class="support-card">
@@ -1187,7 +1161,6 @@
                 <div class="support-phone">
                     📱 (44) 98846-4080
                 </div>
-                <p style="margin: 1.5rem 0;">Atendimento especializado para criar a solução perfeita para seu negócio.</p>
                 <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20uma%20solução%20personalizada%20para%20minha%20empresa." 
                    class="support-whatsapp" 
                    target="_blank">
@@ -1219,39 +1192,20 @@
         </section>
 
         <!-- Testimonials -->
-        <section class="testimonials" id="testimonials">
+        <section class="testimonials">
             <h2 class="section-title">O que nossos clientes dizem</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <p>"O sistema financeiro que desenvolveram para minha empresa otimizou 80% do tempo que gastava com planilhas. Recomendo!"</p>
-                    <div class="testimonial-author">- Carlos Eduardo, Empresário</div>
+                    <p>"O Dashboard de Risco de Crédito revolucionou nossa análise de carteira. Reduzimos a inadimplência em 35%!"</p>
+                    <div class="testimonial-author">- Financeiro LM10 Solutions</div>
                 </div>
                 <div class="testimonial-card">
-                    <p>"O sistema de Gerenciamento de Consórcios revolucionou minha administração. Dashboard completo e fácil de usar!"</p>
-                    <div class="testimonial-author">- Mariana Silva, Administradora de Consórcios</div>
+                    <p>"O sistema de Gerenciamento de Consórcios é completo e fácil de usar. Recomendo para todas administradoras."</p>
+                    <div class="testimonial-author">- Administradora de Consórcios</div>
                 </div>
                 <div class="testimonial-card">
-                    <p>"O PC Turbo Cleaner salvou meu computador. Rápido, fácil e barato. Agora estou pensando em automatizar minha empresa com eles."</p>
-                    <div class="testimonial-author">- Ricardo Mendes, Autônomo</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Coming Soon -->
-        <section class="featured-product" style="margin-top: 40px;">
-            <h2 class="section-title">Próximos Lançamentos</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
-                    <h3 style="margin-bottom: 1rem;">SaaS Gestão Empresarial</h3>
-                    <p>Sistema completo com módulos financeiro, RH, compras e vendas integrados.</p>
-                    <span style="display: inline-block; background: #e2e8f0; padding: 5px 15px; border-radius: 50px; margin-top: 1rem;">Em desenvolvimento</span>
-                </div>
-                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤖</div>
-                    <h3 style="margin-bottom: 1rem;">Assistente Virtual</h3>
-                    <p>Chatbot inteligente para atendimento ao cliente e automação de vendas.</p>
-                    <span style="display: inline-block; background: #e2e8f0; padding: 5px 15px; border-radius: 50px; margin-top: 1rem;">Em breve</span>
+                    <p>"O PC Turbo Cleaner salvou meu computador. Rápido, fácil e barato. Excelente produto!"</p>
+                    <div class="testimonial-author">- Ricardo Mendes</div>
                 </div>
             </div>
         </section>
@@ -1280,18 +1234,14 @@
                 <h4>Soluções</h4>
                 <a href="#products">PC Turbo Cleaner PRO</a>
                 <a href="#free">Unificador Excel Grátis</a>
+                <a href="#risk">Dashboard Risco de Crédito</a>
                 <a href="#consorcio">Gerenciamento de Consórcios</a>
-                <a href="#business">Sistemas Financeiros</a>
-                <a href="#business">Sistemas de RH</a>
-                <a href="#business">Sistemas de Compras</a>
                 <a href="#saas">Criação de SaaS</a>
             </div>
             <div class="footer-section">
                 <h4>Contato</h4>
                 <a href="mailto:centralmendes@gmail.com">centralmendes@gmail.com</a>
                 <a href="https://wa.me/554488464080">WhatsApp: (44) 98846-4080</a>
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Termos de Uso</a>
             </div>
         </div>
         <div class="copyright">
@@ -1300,7 +1250,48 @@
     </footer>
 
     <script>
-        // Função de simulação de parcela de consórcio
+        // Simulação de Score de Crédito
+        function simularScore() {
+            const score = parseInt(document.getElementById('scoreCliente').value);
+            const resultadoDiv = document.getElementById('resultadoScore');
+            
+            if (isNaN(score) || score < 0 || score > 1000) {
+                resultadoDiv.innerHTML = '⚠️ Por favor, insira um score válido entre 0 e 1000.';
+                resultadoDiv.style.color = '#ffd700';
+                return;
+            }
+            
+            let status = '';
+            let cor = '';
+            let descricao = '';
+            
+            if (score <= 200) {
+                status = 'RUIM';
+                cor = '#ef5b25';
+                descricao = '⚠️ ALTO RISCO - Cliente com alta probabilidade de inadimplência';
+            } else if (score <= 500) {
+                status = 'REGULAR';
+                cor = '#ff9800';
+                descricao = '⚠️ RISCO MODERADO - Necessita acompanhamento';
+            } else if (score <= 700) {
+                status = 'BOM';
+                cor = '#ffc107';
+                descricao = '✅ RISCO CONTROLADO - Cliente confiável';
+            } else {
+                status = 'ÓTIMO';
+                cor = '#4caf50';
+                descricao = '✅ BAIXO RISCO - Cliente excelente';
+            }
+            
+            resultadoDiv.innerHTML = `
+                <div>📊 Score: <strong>${score}</strong></div>
+                <div style="margin-top: 10px;">🎯 Classificação: <strong style="color: ${cor};">${status}</strong></div>
+                <div style="font-size: 12px; margin-top: 10px;">${descricao}</div>
+            `;
+            resultadoDiv.style.color = 'white';
+        }
+        
+        // Simulação de parcela de consórcio
         function simularParcela() {
             const valorBem = parseFloat(document.getElementById('valorBem').value);
             const numParcelas = parseFloat(document.getElementById('numParcelas').value);
@@ -1312,29 +1303,16 @@
                 return;
             }
             
-            if (isNaN(numParcelas) || numParcelas <= 0) {
-                resultadoDiv.innerHTML = '⚠️ Por favor, insira um número válido de parcelas.';
-                resultadoDiv.style.color = '#ffd700';
-                return;
-            }
-            
-            // Taxa de administração média de 18%
             const taxaAdm = 0.18;
-            const taxaFundo = 0.005; // 0.5% ao mês aproximado
-            
-            // Cálculo aproximado
+            const taxaFundo = 0.005;
             const valorTotal = valorBem * (1 + taxaAdm);
             const valorParcelaBase = valorTotal / numParcelas;
-            
-            // Simulação com correção aproximada
             const valorParcela = valorParcelaBase * (1 + (taxaFundo * numParcelas / 2));
             
             resultadoDiv.innerHTML = `
                 <div>💰 Valor do bem: <strong class="valor">${formatMoney(valorBem)}</strong></div>
-                <div>📅 Número de parcelas: <strong>${numParcelas}x</strong></div>
-                <div style="margin-top: 10px;">📊 Valor aproximado da parcela:</div>
-                <div class="valor">${formatMoney(valorParcela)}</div>
-                <div style="font-size: 12px; margin-top: 10px;">*Simulação aproximada - consulte condições reais</div>
+                <div>📅 ${numParcelas}x de <strong class="valor">${formatMoney(valorParcela)}</strong></div>
+                <div style="font-size: 12px; margin-top: 10px;">*Simulação aproximada</div>
             `;
             resultadoDiv.style.color = 'white';
         }
@@ -1348,11 +1326,12 @@
         
         // Permitir Enter nos inputs
         document.addEventListener('DOMContentLoaded', function() {
-            const inputs = document.querySelectorAll('.simulador input');
+            const inputs = document.querySelectorAll('.simulador-risk input');
             inputs.forEach(input => {
                 input.addEventListener('keypress', function(e) {
                     if (e.key === 'Enter') {
-                        simularParcela();
+                        if (this.id === 'scoreCliente') simularScore();
+                        if (this.id === 'valorBem' || this.id === 'numParcelas') simularParcela();
                     }
                 });
             });
