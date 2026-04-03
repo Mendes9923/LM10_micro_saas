@@ -195,6 +195,154 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
+        /* ===== NOVA SEÇÃO: PRODUTO CONSÓRCIOS ===== */
+        .consorcio-product {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .consorcio-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            color: white;
+        }
+
+        .consorcio-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .consorcio-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .consorcio-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .consorcio-badge {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .consorcio-content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .consorcio-features h3,
+        .consorcio-demo h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .consorcio-features ul {
+            list-style: none;
+        }
+
+        .consorcio-features li {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .consorcio-features li:before {
+            content: "🚀";
+            font-size: 1.2rem;
+        }
+
+        .demo-container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .simulador {
+            background: rgba(255,255,255,0.15);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .simulador input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .simulador button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s;
+        }
+
+        .simulador button:hover {
+            transform: translateY(-2px);
+        }
+
+        .resultado-simulacao {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .resultado-simulacao .valor {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .consorcio-cta {
+            grid-column: span 2;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .consorcio-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+        }
+
+        .consorcio-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
         /* Iframe Container */
         .iframe-container {
             max-width: 1400px;
@@ -229,15 +377,43 @@
         .open-new-tab {
             background: #667eea;
             color: white;
-            padding: 5px 15px;
-            border-radius: 5px;
+            padding: 8px 20px;
+            border-radius: 8px;
             text-decoration: none;
             font-size: 0.9rem;
-            transition: background 0.3s;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .open-new-tab:hover {
             background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        .wakeup-alert {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .wakeup-tip {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: #2e7d32;
         }
 
         iframe {
@@ -632,6 +808,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .consorcio-content {
+                grid-template-columns: 1fr;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -665,6 +845,7 @@
             <div class="nav-links">
                 <a href="#home">Início</a>
                 <a href="#free">Grátis</a>
+                <a href="#consorcio">Consórcios</a>
                 <a href="#products">Produtos</a>
                 <a href="#business">Soluções</a>
                 <a href="#saas">SaaS</a>
@@ -712,6 +893,58 @@
             </div>
         </section>
 
+        <!-- ===== NOVO PRODUTO: GERENCIAMENTO DE CONSÓRCIOS ===== -->
+        <section class="consorcio-product" id="consorcio">
+            <div class="consorcio-card">
+                <div class="consorcio-header">
+                    <h2>🏦 Gerenciamento de Consórcios</h2>
+                    <p>Sistema completo para administração de carteira de consórcios</p>
+                    <div class="consorcio-badge">🔥 Sistema Desktop Completo</div>
+                </div>
+                <div class="consorcio-content">
+                    <div class="consorcio-features">
+                        <h3>🚀 Funcionalidades</h3>
+                        <ul>
+                            <li>Cadastro completo de consórcios</li>
+                            <li>Controle de parcelas pagas e quitadas</li>
+                            <li>Gestão de crédito disponível</li>
+                            <li>Controle de consórcios contemplados</li>
+                            <li>Dashboard interativo com gráficos</li>
+                            <li>Relatórios gerenciais</li>
+                            <li>Controle de usuários com níveis de acesso</li>
+                            <li>Backup automático do banco de dados</li>
+                            <li>Exportação para Excel/CSV</li>
+                            <li>Simulação de valores de resgate</li>
+                        </ul>
+                    </div>
+                    <div class="consorcio-demo">
+                        <h3>💡 Simulação Interativa</h3>
+                        <div class="demo-container">
+                            <p>Simule o valor aproximado de uma parcela de consórcio:</p>
+                            <div class="simulador">
+                                <input type="number" id="valorBem" placeholder="Valor do bem (R$)">
+                                <input type="number" id="numParcelas" placeholder="Número de parcelas" value="60">
+                                <button onclick="simularParcela()">📊 SIMULAR PARCELA</button>
+                                <div class="resultado-simulacao" id="resultadoSimulacao">
+                                    Preencha os valores acima
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="consorcio-cta">
+                        <a href="https://wa.me/554488464080?text=Olá!%20Tenho%20interesse%20no%20Sistema%20de%20Gerenciamento%20de%20Consórcios" 
+                           class="consorcio-button" 
+                           target="_blank">
+                            💬 SOLICITAR DEMONSTRAÇÃO
+                        </a>
+                        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                            🔒 Sistema seguro com controle de acesso | 📊 Dashboard completo | 💾 Backup automático
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- IFRAME DO STREAMLIT - Unificador de Excel -->
         <div class="iframe-container" id="excel-unifier">
             <div class="iframe-wrapper">
@@ -720,9 +953,25 @@
                     <a href="https://uniciacaexcel-wa33jeh6gszmhbppeqrbep.streamlit.app/" 
                        class="open-new-tab" 
                        target="_blank">
-                        📌 Abrir em nova aba
+                        📌 Abrir em nova aba (recomendado)
                     </a>
                 </div>
+                
+                <div class="wakeup-alert">
+                    <div class="wakeup-alert-icon">⏳</div>
+                    <div class="wakeup-alert-text">
+                        <strong>🔄 O aplicativo pode levar de 30 a 60 segundos para iniciar</strong>
+                        <p>O Streamlit Cloud entra em modo de espera após inatividade. Por favor, aguarde enquanto o servidor é ativado.</p>
+                    </div>
+                </div>
+                
+                <div class="wakeup-tip">
+                    <div class="wakeup-tip-icon">💡</div>
+                    <div style="flex: 1">
+                        <strong>Dica:</strong> Se o aplicativo não carregar em 60 segundos ou ficar em branco, <strong>clique em "Abrir em nova aba"</strong> acima. Lá você verá um botão para ativar o app manualmente.
+                    </div>
+                </div>
+                
                 <iframe 
                     src="https://uniciacaexcel-wa33jeh6gszmhbppeqrbep.streamlit.app/?embed=true"
                     title="Unificador de Excel - LM micros saas"
@@ -978,8 +1227,8 @@
                     <div class="testimonial-author">- Carlos Eduardo, Empresário</div>
                 </div>
                 <div class="testimonial-card">
-                    <p>"Precisava de um sistema de RH personalizado e eles entregaram além do esperado. Suporte excelente!"</p>
-                    <div class="testimonial-author">- Ana Paula, Gestora de RH</div>
+                    <p>"O sistema de Gerenciamento de Consórcios revolucionou minha administração. Dashboard completo e fácil de usar!"</p>
+                    <div class="testimonial-author">- Mariana Silva, Administradora de Consórcios</div>
                 </div>
                 <div class="testimonial-card">
                     <p>"O PC Turbo Cleaner salvou meu computador. Rápido, fácil e barato. Agora estou pensando em automatizar minha empresa com eles."</p>
@@ -1031,6 +1280,7 @@
                 <h4>Soluções</h4>
                 <a href="#products">PC Turbo Cleaner PRO</a>
                 <a href="#free">Unificador Excel Grátis</a>
+                <a href="#consorcio">Gerenciamento de Consórcios</a>
                 <a href="#business">Sistemas Financeiros</a>
                 <a href="#business">Sistemas de RH</a>
                 <a href="#business">Sistemas de Compras</a>
@@ -1048,5 +1298,65 @@
             © 2024 LM10 Solutions. Todos os direitos reservados. | Atendimento: (44) 98846-4080
         </div>
     </footer>
+
+    <script>
+        // Função de simulação de parcela de consórcio
+        function simularParcela() {
+            const valorBem = parseFloat(document.getElementById('valorBem').value);
+            const numParcelas = parseFloat(document.getElementById('numParcelas').value);
+            const resultadoDiv = document.getElementById('resultadoSimulacao');
+            
+            if (isNaN(valorBem) || valorBem <= 0) {
+                resultadoDiv.innerHTML = '⚠️ Por favor, insira um valor válido para o bem.';
+                resultadoDiv.style.color = '#ffd700';
+                return;
+            }
+            
+            if (isNaN(numParcelas) || numParcelas <= 0) {
+                resultadoDiv.innerHTML = '⚠️ Por favor, insira um número válido de parcelas.';
+                resultadoDiv.style.color = '#ffd700';
+                return;
+            }
+            
+            // Taxa de administração média de 18%
+            const taxaAdm = 0.18;
+            const taxaFundo = 0.005; // 0.5% ao mês aproximado
+            
+            // Cálculo aproximado
+            const valorTotal = valorBem * (1 + taxaAdm);
+            const valorParcelaBase = valorTotal / numParcelas;
+            
+            // Simulação com correção aproximada
+            const valorParcela = valorParcelaBase * (1 + (taxaFundo * numParcelas / 2));
+            
+            resultadoDiv.innerHTML = `
+                <div>💰 Valor do bem: <strong class="valor">${formatMoney(valorBem)}</strong></div>
+                <div>📅 Número de parcelas: <strong>${numParcelas}x</strong></div>
+                <div style="margin-top: 10px;">📊 Valor aproximado da parcela:</div>
+                <div class="valor">${formatMoney(valorParcela)}</div>
+                <div style="font-size: 12px; margin-top: 10px;">*Simulação aproximada - consulte condições reais</div>
+            `;
+            resultadoDiv.style.color = 'white';
+        }
+        
+        function formatMoney(value) {
+            return 'R$ ' + value.toLocaleString('pt-BR', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+        }
+        
+        // Permitir Enter nos inputs
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('.simulador input');
+            inputs.forEach(input => {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        simularParcela();
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
