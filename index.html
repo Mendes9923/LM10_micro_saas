@@ -126,6 +126,127 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
+        /* Free Product Section */
+        .free-product {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .free-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .free-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 2rem;
+            color: white;
+        }
+
+        .free-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .free-features {
+            list-style: none;
+            margin: 1.5rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .free-features li {
+            display: flex;
+            align-items: center;
+        }
+
+        .free-features li:before {
+            content: "✓";
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .use-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: white;
+            color: #f5576c;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .use-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Iframe Container */
+        .iframe-container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .iframe-wrapper {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .iframe-header {
+            background: #2d3748;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .iframe-header span {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .open-new-tab {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .open-new-tab:hover {
+            background: #764ba2;
+        }
+
+        iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            display: block;
+        }
+
         /* Featured Product */
         .featured-product {
             max-width: 1200px;
@@ -518,6 +639,15 @@
             .support-phone {
                 font-size: 1.5rem;
             }
+            
+            .iframe-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            iframe {
+                height: 500px;
+            }
         }
     </style>
 </head>
@@ -534,9 +664,10 @@
             <div class="logo">LM10 Solutions</div>
             <div class="nav-links">
                 <a href="#home">Início</a>
+                <a href="#free">Grátis</a>
                 <a href="#products">Produtos</a>
-                <a href="#business">Soluções Empresariais</a>
-                <a href="#saas">Sistemas SaaS</a>
+                <a href="#business">Soluções</a>
+                <a href="#saas">SaaS</a>
                 <a href="#contact">Contato</a>
             </div>
         </nav>
@@ -547,8 +678,58 @@
         <section class="hero" id="home">
             <h1>Soluções completas para seu PC e sua empresa</h1>
             <p>Micro SaaS, sistemas empresariais, automação de tarefas administrativas e muito mais. Simplificamos a tecnologia para você!</p>
-            <a href="https://mendes9923.github.io/pcturbocleaner/" class="cta-button">Conheça o PC Turbo Cleaner</a>
+            <a href="#free" class="cta-button">🎁 Experimente grátis</a>
         </section>
+
+        <!-- FREE PRODUCT SECTION - Unificador de Excel -->
+        <section class="free-product" id="free">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <span class="free-badge">🎁 100% GRATUITO</span>
+                <h2 class="section-title" style="margin-top: 1rem;">Unificador de Arquivos Excel</h2>
+                <p style="max-width: 800px; margin: 0 auto; color: #555;">Ferramenta gratuita para consolidar múltiplas planilhas em um único arquivo</p>
+            </div>
+
+            <div class="free-card">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                    <div>
+                        <h3>📊 LM Unificador Excel</h3>
+                        <p>Transforme várias planilhas em uma única organizada em segundos!</p>
+                        <ul class="free-features">
+                            <li>Consolide múltiplos arquivos Excel</li>
+                            <li>Adicione coluna com nome do arquivo origem</li>
+                            <li>Pule linhas iniciais automaticamente</li>
+                            <li>Selecione colunas específicas</li>
+                            <li>Baixe o resultado em Excel</li>
+                            <li>100% online, sem instalação</li>
+                        </ul>
+                        <a href="#excel-unifier" class="use-button">🚀 Usar agora →</a>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 4rem;">📑 ➡️ 📊</div>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">Suporte a .xlsx e .xls</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IFRAME DO STREAMLIT - Unificador de Excel -->
+        <div class="iframe-container" id="excel-unifier">
+            <div class="iframe-wrapper">
+                <div class="iframe-header">
+                    <span>🔧 LM Unificador de Excel - Ferramenta Gratuita</span>
+                    <a href="https://uniciacaexcel-wa33jeh6gszmhbppeqrbep.streamlit.app/" 
+                       class="open-new-tab" 
+                       target="_blank">
+                        📌 Abrir em nova aba
+                    </a>
+                </div>
+                <iframe 
+                    src="https://uniciacaexcel-wa33jeh6gszmhbppeqrbep.streamlit.app/?embed=true"
+                    title="Unificador de Excel - LM micros saas"
+                    allow="clipboard-read; clipboard-write">
+                </iframe>
+            </div>
+        </div>
 
         <!-- Featured Product -->
         <section class="featured-product" id="products">
@@ -849,6 +1030,7 @@
             <div class="footer-section">
                 <h4>Soluções</h4>
                 <a href="#products">PC Turbo Cleaner PRO</a>
+                <a href="#free">Unificador Excel Grátis</a>
                 <a href="#business">Sistemas Financeiros</a>
                 <a href="#business">Sistemas de RH</a>
                 <a href="#business">Sistemas de Compras</a>
