@@ -195,154 +195,6 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        /* ===== PRODUTO: DASHBOARD RISCO DE CRÉDITO ===== */
-        .risk-product {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-        .risk-card {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            color: white;
-        }
-
-        .risk-header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            padding: 30px;
-            text-align: center;
-        }
-
-        .risk-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .risk-header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .risk-badge {
-            display: inline-block;
-            background: #ff6b6b;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            margin-top: 15px;
-        }
-
-        .risk-content {
-            padding: 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .risk-features h3,
-        .risk-demo h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #667eea;
-        }
-
-        .risk-features ul {
-            list-style: none;
-        }
-
-        .risk-features li {
-            margin: 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .risk-features li:before {
-            content: "📊";
-            font-size: 1.2rem;
-        }
-
-        .demo-container-risk {
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .simulador-risk {
-            background: rgba(255,255,255,0.15);
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .simulador-risk input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-
-        .simulador-risk button {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: transform 0.3s;
-        }
-
-        .simulador-risk button:hover {
-            transform: translateY(-2px);
-        }
-
-        .resultado-simulacao-risk {
-            margin-top: 15px;
-            padding: 15px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .resultado-simulacao-risk .valor {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ffd700;
-        }
-
-        .risk-cta {
-            grid-column: span 2;
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .risk-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #28a745, #20c997);
-            color: white;
-            text-decoration: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s;
-        }
-
-        .risk-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
         /* Consorcio Product */
         .consorcio-product {
             max-width: 1200px;
@@ -367,6 +219,11 @@
         .consorcio-header h2 {
             font-size: 2.5rem;
             margin-bottom: 10px;
+        }
+
+        .consorcio-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
 
         .consorcio-badge {
@@ -409,6 +266,59 @@
             font-size: 1.2rem;
         }
 
+        .demo-container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .simulador {
+            background: rgba(255,255,255,0.15);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .simulador input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .simulador button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s;
+        }
+
+        .simulador button:hover {
+            transform: translateY(-2px);
+        }
+
+        .resultado-simulacao {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .resultado-simulacao .valor {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
         .consorcio-cta {
             grid-column: span 2;
             text-align: center;
@@ -426,6 +336,11 @@
             font-weight: bold;
             font-size: 1.1rem;
             transition: transform 0.3s;
+        }
+
+        .consorcio-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         /* Iframe Container */
@@ -454,6 +369,11 @@
             gap: 10px;
         }
 
+        .iframe-header span {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
         .open-new-tab {
             background: #667eea;
             color: white;
@@ -466,6 +386,11 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+        }
+
+        .open-new-tab:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
         }
 
         .wakeup-alert {
@@ -581,6 +506,10 @@
             transition: transform 0.3s;
         }
 
+        .product-button:hover {
+            transform: translateY(-2px);
+        }
+
         /* Business Solutions Section */
         .business-solutions {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -621,6 +550,11 @@
             margin-bottom: 1rem;
         }
 
+        .solution-card p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
         .solution-whatsapp {
             display: inline-block;
             padding: 10px 25px;
@@ -633,101 +567,83 @@
             margin-top: 1rem;
         }
 
-        /* SaaS Development Section */
-        .saas-development {
+        .solution-whatsapp:hover {
+            transform: scale(1.05);
+            color: white;
+        }
+
+        /* Websites Section */
+        .websites-section {
             background: white;
             padding: 80px 20px;
         }
 
-        .saas-grid {
+        .websites-grid {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .saas-card {
-            background: linear-gradient(135deg, #667eea10, #764ba210);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .saas-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .saas-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .saas-card h3 {
-            margin-bottom: 1rem;
-            color: #667eea;
-        }
-
-        /* Support Section */
-        .support-section {
-            background: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .support-card {
-            max-width: 600px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, #667eea10, #764ba210);
-            padding: 3rem;
+        .website-card {
+            background: #fff;
             border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e2e8f0;
         }
 
-        .support-phone {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #25D366;
-            margin: 1.5rem 0;
+        .website-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.15);
         }
 
-        .support-whatsapp {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #25D366;
+        .website-preview {
+            height: 150px;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            text-decoration: none;
-            border-radius: 50px;
             font-weight: bold;
             font-size: 1.2rem;
-            transition: transform 0.3s;
         }
 
-        /* Trust Badges */
-        .trust-section {
-            background: #f8f9fa;
-            padding: 60px 20px;
+        .website-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: #2d3748;
         }
 
-        .trust-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .trust-item {
-            padding: 2rem;
-        }
-
-        .trust-number {
-            font-size: 2.5rem;
+        .price-tag {
             font-weight: bold;
             color: #667eea;
-            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            margin: 0.8rem 0;
+        }
+
+        .demo-link {
+            display: inline-block;
+            margin-top: 0.8rem;
+            background: #667eea;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .demo-link:hover {
+            background: #764ba2;
+            transform: scale(1.03);
         }
 
         /* Testimonials */
@@ -748,11 +664,17 @@
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
         }
 
         .testimonial-card p {
             font-style: italic;
             margin-bottom: 1rem;
+            color: #4a5568;
         }
 
         .testimonial-author {
@@ -777,6 +699,143 @@
             background: white;
             color: #667eea;
             margin-top: 2rem;
+        }
+
+        /* ========== MODAL PREMIUM ========== */
+        .demo-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+        }
+
+        .demo-content {
+            width: 95%;
+            height: 95%;
+            margin: 1% auto;
+            background: #111;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .demo-header {
+            background: #1f2937;
+            color: white;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .demo-left span {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .demo-controls button {
+            margin: 0 5px;
+            background: #374151;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .demo-controls button:hover {
+            background: #667eea;
+            transform: scale(1.05);
+        }
+
+        .demo-right button {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .demo-right button:hover {
+            background: rgba(255,255,255,0.4);
+            transform: scale(1.05);
+        }
+
+        .demo-loader {
+            text-align: center;
+            padding: 12px;
+            background: #000;
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .demo-loader span {
+            display: inline-block;
+            animation: pulse 1.5s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .iframe-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            padding: 10px;
+        }
+
+        #demoFrame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            transition: all 0.3s ease;
+            background: white;
+            border-radius: 0;
+        }
+
+        /* MOBILE VIEW */
+        .mobile-view {
+            width: 375px !important;
+            height: 667px !important;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255,255,255,0.2);
+        }
+
+        .demo-footer {
+            background: #111;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .demo-footer a {
+            background: linear-gradient(135deg, #25D366, #20c997);
+            color: white;
+            padding: 12px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .demo-footer a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
         }
 
         /* Footer */
@@ -836,28 +895,29 @@
             .product-card {
                 grid-template-columns: 1fr;
             }
-            .risk-content, .consorcio-content {
+            .consorcio-content {
                 grid-template-columns: 1fr;
             }
             .nav-links {
                 display: none;
             }
-            .support-phone {
-                font-size: 1.5rem;
+            .section-title {
+                font-size: 1.8rem;
             }
-            iframe {
-                height: 500px;
+            .mobile-view {
+                width: 320px !important;
+                height: 600px !important;
+            }
+            .demo-controls button {
+                padding: 5px 10px;
+                font-size: 0.8rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- WhatsApp Float Button -->
     <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20ajuda%20com%20soluções%20empresariais%20e%20sistemas%20SaaS." 
-       class="whatsapp-float" 
-       target="_blank">
-        💬
-    </a>
+       class="whatsapp-float" target="_blank">💬</a>
 
     <header>
         <nav>
@@ -865,106 +925,49 @@
             <div class="nav-links">
                 <a href="#home">Início</a>
                 <a href="#free">Grátis</a>
-                <a href="#risk">Risco</a>
                 <a href="#consorcio">Consórcios</a>
                 <a href="#products">Produtos</a>
                 <a href="#business">Soluções</a>
                 <a href="#saas">SaaS</a>
+                <a href="#sites">Sites</a>
+                <a href="#testimonials">Depoimentos</a>
                 <a href="#contact">Contato</a>
             </div>
         </nav>
     </header>
 
     <main class="main-content">
-        <!-- Hero Section -->
         <section class="hero" id="home">
             <h1>Soluções completas para seu PC e sua empresa</h1>
             <p>Micro SaaS, sistemas empresariais, automação de tarefas administrativas e muito mais. Simplificamos a tecnologia para você!</p>
             <a href="#free" class="cta-button">🎁 Experimente grátis</a>
         </section>
 
-        <!-- FREE PRODUCT SECTION - Unificador de Excel -->
+        <!-- Produto Grátis Unificador Excel -->
         <section class="free-product" id="free">
             <div style="text-align: center; margin-bottom: 2rem;">
                 <span class="free-badge">🎁 100% GRATUITO</span>
                 <h2 class="section-title" style="margin-top: 1rem;">Unificador de Arquivos Excel</h2>
-                <p style="max-width: 800px; margin: 0 auto; color: #555;">Ferramenta gratuita para consolidar múltiplas planilhas em um único arquivo</p>
             </div>
-
             <div class="free-card">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
                     <div>
                         <h3>📊 LM Unificador Excel</h3>
-                        <p>Transforme várias planilhas em uma única organizada em segundos!</p>
+                        <p>Consolide várias planilhas em segundos!</p>
                         <ul class="free-features">
                             <li>Consolide múltiplos arquivos Excel</li>
                             <li>Adicione coluna com nome do arquivo origem</li>
-                            <li>Pule linhas iniciais automaticamente</li>
                             <li>Selecione colunas específicas</li>
                             <li>Baixe o resultado em Excel</li>
-                            <li>100% online, sem instalação</li>
                         </ul>
                         <a href="#excel-unifier" class="use-button">🚀 Usar agora →</a>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 4rem;">📑 ➡️ 📊</div>
-                        <p style="margin-top: 1rem; font-size: 0.9rem;">Suporte a .xlsx e .xls</p>
-                    </div>
+                    <div style="text-align: center; font-size: 4rem;">📑 ➡️ 📊</div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== NOVO PRODUTO: DASHBOARD RISCO DE CRÉDITO ===== -->
-        <section class="risk-product" id="risk">
-            <div class="risk-card">
-                <div class="risk-header">
-                    <h2>📊 Dashboard Risco de Crédito</h2>
-                    <p>Análise completa de carteira, inadimplência e score de crédito</p>
-                    <div class="risk-badge">🔥 Sistema Web Completo</div>
-                </div>
-                <div class="risk-content">
-                    <div class="risk-features">
-                        <h3>🚀 Funcionalidades</h3>
-                        <ul>
-                            <li>Análise de score de crédito (Ruim a Ótimo)</li>
-                            <li>Classificação automática de risco</li>
-                            <li>Dashboard interativo com gráficos</li>
-                            <li>Ranking de clientes inadimplentes</li>
-                            <li>Análise por filial e supervisor</li>
-                            <li>Métricas de inadimplência</li>
-                            <li>Ticket médio por perfil de risco</li>
-                            <li>Exportação para Excel</li>
-                            <li>Filtros dinâmicos por período e região</li>
-                        </ul>
-                    </div>
-                    <div class="risk-demo">
-                        <h3>💡 Simulação de Score</h3>
-                        <div class="demo-container-risk">
-                            <p>Simule a classificação de risco de um cliente:</p>
-                            <div class="simulador-risk">
-                                <input type="number" id="scoreCliente" placeholder="Score do cliente (0-1000)">
-                                <button onclick="simularScore()">🔍 CLASSIFICAR RISCO</button>
-                                <div class="resultado-simulacao-risk" id="resultadoScore">
-                                    Digite um score para classificar
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="risk-cta">
-                        <a href="https://wa.me/554488464080?text=Olá!%20Tenho%20interesse%20no%20Dashboard%20de%20Risco%20de%20Crédito" 
-                           class="risk-button" 
-                           target="_blank">
-                            💬 SOLICITAR DEMONSTRAÇÃO
-                        </a>
-                        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
-                            🔒 Análise em tempo real | 📊 Gráficos interativos | 📥 Exportação de dados
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PRODUTO: GERENCIAMENTO DE CONSÓRCIOS -->
+        <!-- Produto Consórcios -->
         <section class="consorcio-product" id="consorcio">
             <div class="consorcio-card">
                 <div class="consorcio-header">
@@ -979,238 +982,139 @@
                             <li>Cadastro completo de consórcios</li>
                             <li>Controle de parcelas pagas e quitadas</li>
                             <li>Gestão de crédito disponível</li>
-                            <li>Controle de consórcios contemplados</li>
                             <li>Dashboard interativo com gráficos</li>
-                            <li>Relatórios gerenciais</li>
-                            <li>Controle de usuários com níveis de acesso</li>
                             <li>Backup automático do banco de dados</li>
                         </ul>
                     </div>
                     <div class="consorcio-demo">
                         <h3>💡 Simulação Interativa</h3>
-                        <div class="demo-container-risk">
-                            <p>Simule o valor aproximado de uma parcela:</p>
-                            <div class="simulador-risk">
+                        <div class="demo-container">
+                            <div class="simulador">
                                 <input type="number" id="valorBem" placeholder="Valor do bem (R$)">
                                 <input type="number" id="numParcelas" placeholder="Número de parcelas" value="60">
                                 <button onclick="simularParcela()">📊 SIMULAR PARCELA</button>
-                                <div class="resultado-simulacao-risk" id="resultadoSimulacao">
-                                    Preencha os valores acima
-                                </div>
+                                <div class="resultado-simulacao" id="resultadoSimulacao">Preencha os valores acima</div>
                             </div>
                         </div>
                     </div>
                     <div class="consorcio-cta">
-                        <a href="https://wa.me/554488464080?text=Olá!%20Tenho%20interesse%20no%20Sistema%20de%20Gerenciamento%20de%20Consórcios" 
-                           class="consorcio-button" 
-                           target="_blank">
-                            💬 SOLICITAR DEMONSTRAÇÃO
-                        </a>
+                        <a href="https://wa.me/554488464080?text=Olá!%20Tenho%20interesse%20no%20Sistema%20de%20Gerenciamento%20de%20Consórcios" class="consorcio-button" target="_blank">💬 SOLICITAR DEMONSTRAÇÃO</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- IFRAME DO STREAMLIT - Unificador de Excel -->
+        <!-- Iframe Unificador Excel -->
         <div class="iframe-container" id="excel-unifier">
             <div class="iframe-wrapper">
                 <div class="iframe-header">
                     <span>🔧 LM Unificador de Excel - Ferramenta Gratuita</span>
-                    <a href="https://uniciacaexcel-wa33jeh6gszmhbppeqrbep.streamlit.app/" 
-                       class="open-new-tab" 
-                       target="_blank">
-                        📌 Abrir em nova aba (recomendado)
-                    </a>
+                    <a href="https://uniciacaexcel-wa33jeh6gszmhbppeqrbep.streamlit.app/" class="open-new-tab" target="_blank">📌 Abrir em nova aba</a>
                 </div>
-                
-                <div class="wakeup-alert">
-                    <div class="wakeup-alert-icon">⏳</div>
-                    <div class="wakeup-alert-text">
-                        <strong>🔄 O aplicativo pode levar de 30 a 60 segundos para iniciar</strong>
-                        <p>O Streamlit Cloud entra em modo de espera após inatividade. Por favor, aguarde enquanto o servidor é ativado.</p>
-                    </div>
-                </div>
-                
-                <div class="wakeup-tip">
-                    <div class="wakeup-tip-icon">💡</div>
-                    <div style="flex: 1">
-                        <strong>Dica:</strong> Se o aplicativo não carregar em 60 segundos ou ficar em branco, <strong>clique em "Abrir em nova aba"</strong> acima.
-                    </div>
-                </div>
-                
-                <iframe 
-                    src="https://uniciacaexcel-wa33jeh6gszmhbppeqrbep.streamlit.app/?embed=true"
-                    title="Unificador de Excel - LM10 Solutions"
-                    allow="clipboard-read; clipboard-write">
-                </iframe>
+                <div class="wakeup-alert">⏳ O aplicativo pode levar de 30 a 60 segundos para iniciar. Aguarde.</div>
+                <iframe src="https://uniciacaexcel-wa33jeh6gszmhbppeqrbep.streamlit.app/?embed=true" title="Unificador de Excel"></iframe>
             </div>
         </div>
 
-        <!-- Featured Product -->
+        <!-- Produto em Destaque -->
         <section class="featured-product" id="products">
             <h2 class="section-title">Produto em Destaque</h2>
             <div class="product-card">
                 <div class="product-info">
                     <span class="product-badge">Mais Vendido</span>
                     <h3>PC Turbo Cleaner PRO</h3>
-                    <p>Limpeza profunda, otimização de RAM e modo turbo gamer com um clique. Resultados imediatos!</p>
-                    
-                    <ul class="product-features">
-                        <li>Limpeza profunda de arquivos inúteis</li>
-                        <li>Modo Turbo Gamer para jogos</li>
-                        <li>Otimizador de RAM em tempo real</li>
-                        <li>Acelera a inicialização do Windows</li>
-                        <li>Monitor de temperatura CPU</li>
-                        <li>100% seguro e fácil de usar</li>
-                    </ul>
-
-                    <div class="rating">
-                        ★★★★★ 4.8/5 (mais de 2.000 avaliações)
-                    </div>
-
-                    <div class="price">
-                        R$ 9,99
-                        <span style="font-size: 1rem; color: #666; margin-left: 10px;">vitalício</span>
-                    </div>
-
-                    <a href="https://mendes9923.github.io/pcturbocleaner/" class="product-button">Saiba Mais / Comprar</a>
+                    <p>Limpeza profunda, otimização de RAM e modo turbo gamer.</p>
+                    <div class="price">R$ 9,99 <span style="font-size:1rem;">vitalício</span></div>
+                    <a href="https://mendes9923.github.io/pcturbocleaner/" class="product-button">Saiba Mais</a>
                 </div>
-                <div style="background: linear-gradient(135deg, #667eea20, #764ba220); border-radius: 15px; display: flex; align-items: center; justify-content: center; padding: 2rem;">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 24 24' fill='%23667eea'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E" alt="PC Turbo Cleaner" style="width: 200px; height: 200px;">
+                <img src="Pc turbo.png" 
+                    alt="PC Turbo Cleaner PRO" 
+                    style="width:100%; max-width:500px; border-radius:10px; transition:0.3s;"
+                    onmouseover="this.style.transform='scale(1.03)'" 
+                    onmouseout="this.style.transform='scale(1)'">
                 </div>
-            </div>
         </section>
 
-        <!-- Business Solutions Section -->
+        <!-- Soluções Empresariais -->
         <section class="business-solutions" id="business">
-            <h2 class="section-title" style="color: white;">Soluções Administrativas & Empresariais</h2>
+            <h2 class="section-title" style="color:white;">Soluções Administrativas</h2>
             <div class="solutions-grid">
-                <div class="solution-card">
-                    <div class="solution-icon">📊</div>
-                    <h3>Planilhas Inteligentes</h3>
-                    <p>Automação de planilhas Excel/Google Sheets com fórmulas avançadas, macros e dashboards interativos.</p>
-                    <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20uma%20planilha%20inteligente%20para%20minha%20empresa." class="solution-whatsapp" target="_blank">Solicitar Orçamento</a>
-                </div>
+                <div class="solution-card"><div class="solution-icon">📊</div><h3>Planilhas Inteligentes</h3><p>Automação e dashboards.</p><a href="https://wa.me/554488464080" class="solution-whatsapp">Orçamento</a></div>
+                <div class="solution-card"><div class="solution-icon">💰</div><h3>Sistema Financeiro</h3><p>Fluxo de caixa, DRE.</p><a href="https://wa.me/554488464080" class="solution-whatsapp">Orçamento</a></div>
+                <div class="solution-card"><div class="solution-icon">👥</div><h3>Sistema de RH</h3><p>Gestão de ponto e folha.</p><a href="https://wa.me/554488464080" class="solution-whatsapp">Orçamento</a></div>
+            </div>
+        </section>
 
-                <div class="solution-card">
-                    <div class="solution-icon">💰</div>
-                    <h3>Sistema Financeiro</h3>
-                    <p>Controle completo das finanças da sua empresa com dashboards e relatórios gerenciais.</p>
-                    <a href="https://wa.me/554488464080?text=Olá!%20Quero%20um%20sistema%20financeiro%20para%20minha%20empresa." class="solution-whatsapp" target="_blank">Solicitar Orçamento</a>
+        <!-- Criação de Sites com Demo Premium -->
+        <section class="websites-section" id="sites">
+            <h2 class="section-title">🌐 Criação de Sites Profissionais</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #4a5568;">
+                Escolha um modelo, visualize em desktop ou mobile e solicite o seu!
+            </p>
+            <div class="websites-grid">
+                <div class="website-card">
+                    <div class="website-preview" style="background: linear-gradient(135deg, #667eea, #764ba2);">🚀 Landing Page</div>
+                    <h3>Site de Vendas</h3>
+                    <p>Página focada em conversão e alta performance.</p>
+                    <div class="price-tag">A partir de R$ 297</div>
+                    <button class="demo-link" onclick="abrirDemo('vendas')">👁 Visualizar modelo</button>
                 </div>
-
-                <div class="solution-card">
-                    <div class="solution-icon">👥</div>
-                    <h3>Sistema de RH</h3>
-                    <p>Gestão completa de recursos humanos: ponto eletrônico, folha de pagamento e benefícios.</p>
-                    <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20um%20sistema%20de%20RH%20para%20minha%20empresa." class="solution-whatsapp" target="_blank">Solicitar Orçamento</a>
+                <div class="website-card">
+                    <div class="website-preview" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">🏢 Institucional</div>
+                    <h3>Site Empresarial</h3>
+                    <p>Apresentação profissional da sua empresa.</p>
+                    <div class="price-tag">A partir de R$ 397</div>
+                    <button class="demo-link" onclick="abrirDemo('empresa')">👁 Visualizar modelo</button>
                 </div>
-
-                <div class="solution-card">
-                    <div class="solution-icon">📦</div>
-                    <h3>Sistema de Compras</h3>
-                    <p>Controle completo do setor de compras com gestão de fornecedores e estoque.</p>
-                    <a href="https://wa.me/554488464080?text=Olá!%20Quero%20um%20sistema%20de%20compras%20para%20minha%20empresa." class="solution-whatsapp" target="_blank">Solicitar Orçamento</a>
+                <div class="website-card">
+                    <div class="website-preview" style="background: linear-gradient(135deg, #f093fb, #f5576c);">📦 Catálogo</div>
+                    <h3>Catálogo de Produtos</h3>
+                    <p>Mostre seus produtos com estilo.</p>
+                    <div class="price-tag">A partir de R$ 497</div>
+                    <button class="demo-link" onclick="abrirDemo('catalogo')">👁 Visualizar modelo</button>
                 </div>
             </div>
         </section>
 
-        <!-- SaaS Development Section -->
-        <section class="saas-development" id="saas">
-            <h2 class="section-title">Criação de Sistemas SaaS Personalizados</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Desenvolvemos sistemas sob medida para automatizar e otimizar processos da sua empresa</p>
-            
-            <div class="saas-grid">
-                <div class="saas-card">
-                    <div class="saas-icon">🚀</div>
-                    <h3>SaaS do Zero</h3>
-                    <p>Desenvolvimento completo do seu sistema SaaS, do planejamento ao lançamento</p>
-                </div>
-                <div class="saas-card">
-                    <div class="saas-icon">⚙️</div>
-                    <h3>Automação de Processos</h3>
-                    <p>Automatize tarefas repetitivas e ganhe produtividade</p>
-                </div>
-                <div class="saas-card">
-                    <div class="saas-icon">📱</div>
-                    <h3>Aplicativos Web</h3>
-                    <p>Sistemas acessíveis de qualquer lugar, 100% online</p>
-                </div>
-                <div class="saas-card">
-                    <div class="saas-icon">🔌</div>
-                    <h3>Integrações</h3>
-                    <p>Conecte seus sistemas com outras plataformas</p>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="https://wa.me/554488464080?text=Olá!%20Quero%20criar%20um%20sistema%20SaaS%20personalizado%20para%20minha%20empresa." 
-                   class="product-button" 
-                   style="background: linear-gradient(135deg, #43e97b, #38f9d7); color: white; padding: 15px 40px;"
-                   target="_blank">
-                    💬 Fale sobre seu projeto
-                </a>
-            </div>
-        </section>
-
-        <!-- Support Section -->
-        <section class="support-section">
-            <div class="support-card">
-                <h2 style="margin-bottom: 1rem;">📞 Precisa de uma solução personalizada?</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 1rem;">Tarefas complicadas? Sistemas complexos? Entre em contato!</p>
-                <div class="support-phone">
-                    📱 (44) 98846-4080
-                </div>
-                <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20uma%20solução%20personalizada%20para%20minha%20empresa." 
-                   class="support-whatsapp" 
-                   target="_blank">
-                    💬 Falar com especialista
-                </a>
-            </div>
-        </section>
-
-        <!-- Trust Badges -->
-        <section class="trust-section">
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <div class="trust-number">+10.000</div>
-                    <div>Usuários ativos</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-number">+50</div>
-                    <div>Sistemas desenvolvidos</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-number">24/7</div>
-                    <div>Suporte dedicado</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-number">100%</div>
-                    <div>Personalizável</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section class="testimonials">
+        <!-- Depoimentos -->
+        <section class="testimonials" id="testimonials">
             <h2 class="section-title">O que nossos clientes dizem</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <p>"O Dashboard de Risco de Crédito revolucionou nossa análise de carteira. Reduzimos a inadimplência em 35%!"</p>
-                    <div class="testimonial-author">- Financeiro LM10 Solutions</div>
+                    <p>"O sistema financeiro que desenvolveram para minha empresa otimizou 80% do tempo que gastava com planilhas. Recomendo!"</p>
+                    <div class="testimonial-author">- Carlos Eduardo, Empresário</div>
                 </div>
                 <div class="testimonial-card">
-                    <p>"O sistema de Gerenciamento de Consórcios é completo e fácil de usar. Recomendo para todas administradoras."</p>
-                    <div class="testimonial-author">- Administradora de Consórcios</div>
+                    <p>"O sistema de Gerenciamento de Consórcios revolucionou minha administração. Dashboard completo e fácil de usar!"</p>
+                    <div class="testimonial-author">- Mariana Silva, Administradora de Consórcios</div>
                 </div>
                 <div class="testimonial-card">
-                    <p>"O PC Turbo Cleaner salvou meu computador. Rápido, fácil e barato. Excelente produto!"</p>
-                    <div class="testimonial-author">- Ricardo Mendes</div>
+                    <p>"O PC Turbo Cleaner salvou meu computador. Rápido, fácil e barato. Agora estou pensando em automatizar minha empresa com eles."</p>
+                    <div class="testimonial-author">- Ricardo Mendes, Autônomo</div>
                 </div>
             </div>
         </section>
 
-        <!-- Final CTA -->
+        <!-- Próximos Lançamentos -->
+        <section class="featured-product" style="margin-top: 40px;">
+            <h2 class="section-title">Próximos Lançamentos</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
+                    <h3 style="margin-bottom: 1rem;">SaaS Gestão Empresarial</h3>
+                    <p>Sistema completo com módulos financeiro, RH, compras e vendas integrados.</p>
+                    <span style="display: inline-block; background: #e2e8f0; padding: 5px 15px; border-radius: 50px; margin-top: 1rem;">Em desenvolvimento</span>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤖</div>
+                    <h3 style="margin-bottom: 1rem;">Assistente Virtual</h3>
+                    <p>Chatbot inteligente para atendimento ao cliente e automação de vendas.</p>
+                    <span style="display: inline-block; background: #e2e8f0; padding: 5px 15px; border-radius: 50px; margin-top: 1rem;">Em breve</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
         <section class="cta-section">
             <h2>Pronto para transformar sua empresa?</h2>
             <p>Soluções personalizadas que realmente funcionam para o seu negócio.</p>
@@ -1234,14 +1138,18 @@
                 <h4>Soluções</h4>
                 <a href="#products">PC Turbo Cleaner PRO</a>
                 <a href="#free">Unificador Excel Grátis</a>
-                <a href="#risk">Dashboard Risco de Crédito</a>
                 <a href="#consorcio">Gerenciamento de Consórcios</a>
+                <a href="#business">Sistemas Financeiros</a>
+                <a href="#business">Sistemas de RH</a>
+                <a href="#business">Sistemas de Compras</a>
                 <a href="#saas">Criação de SaaS</a>
             </div>
             <div class="footer-section">
                 <h4>Contato</h4>
                 <a href="mailto:centralmendes@gmail.com">centralmendes@gmail.com</a>
                 <a href="https://wa.me/554488464080">WhatsApp: (44) 98846-4080</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
             </div>
         </div>
         <div class="copyright">
@@ -1249,92 +1157,123 @@
         </div>
     </footer>
 
+    <!-- MODAL PREMIUM PREVIEW -->
+    <div id="demoModal" class="demo-modal">
+        <div class="demo-content">
+            <!-- HEADER -->
+            <div class="demo-header">
+                <div class="demo-left">
+                    <span>🌐 Preview do Site</span>
+                </div>
+                <div class="demo-controls">
+                    <button onclick="setView('desktop')">💻 Desktop</button>
+                    <button onclick="setView('mobile')">📱 Mobile</button>
+                </div>
+                <div class="demo-right">
+                    <button onclick="fecharDemo()">✖ Fechar</button>
+                </div>
+            </div>
+
+            <!-- LOADER -->
+            <div id="demoLoader" class="demo-loader">
+                <span>⏳ Carregando demonstração...</span>
+            </div>
+
+            <!-- IFRAME -->
+            <div class="iframe-wrapper">
+                <iframe id="demoFrame" title="Prévia do site"></iframe>
+            </div>
+
+            <!-- CTA -->
+            <div class="demo-footer">
+                <a id="btnQuero" href="#" target="_blank">
+                    🚀 Quero esse modelo
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Simulação de Score de Crédito
-        function simularScore() {
-            const score = parseInt(document.getElementById('scoreCliente').value);
-            const resultadoDiv = document.getElementById('resultadoScore');
-            
-            if (isNaN(score) || score < 0 || score > 1000) {
-                resultadoDiv.innerHTML = '⚠️ Por favor, insira um score válido entre 0 e 1000.';
-                resultadoDiv.style.color = '#ffd700';
-                return;
-            }
-            
-            let status = '';
-            let cor = '';
-            let descricao = '';
-            
-            if (score <= 200) {
-                status = 'RUIM';
-                cor = '#ef5b25';
-                descricao = '⚠️ ALTO RISCO - Cliente com alta probabilidade de inadimplência';
-            } else if (score <= 500) {
-                status = 'REGULAR';
-                cor = '#ff9800';
-                descricao = '⚠️ RISCO MODERADO - Necessita acompanhamento';
-            } else if (score <= 700) {
-                status = 'BOM';
-                cor = '#ffc107';
-                descricao = '✅ RISCO CONTROLADO - Cliente confiável';
-            } else {
-                status = 'ÓTIMO';
-                cor = '#4caf50';
-                descricao = '✅ BAIXO RISCO - Cliente excelente';
-            }
-            
-            resultadoDiv.innerHTML = `
-                <div>📊 Score: <strong>${score}</strong></div>
-                <div style="margin-top: 10px;">🎯 Classificação: <strong style="color: ${cor};">${status}</strong></div>
-                <div style="font-size: 12px; margin-top: 10px;">${descricao}</div>
-            `;
-            resultadoDiv.style.color = 'white';
-        }
-        
-        // Simulação de parcela de consórcio
+        // Simulação de consórcio
         function simularParcela() {
             const valorBem = parseFloat(document.getElementById('valorBem').value);
             const numParcelas = parseFloat(document.getElementById('numParcelas').value);
             const resultadoDiv = document.getElementById('resultadoSimulacao');
-            
             if (isNaN(valorBem) || valorBem <= 0) {
-                resultadoDiv.innerHTML = '⚠️ Por favor, insira um valor válido para o bem.';
-                resultadoDiv.style.color = '#ffd700';
+                resultadoDiv.innerHTML = '⚠️ Insira um valor válido.';
                 return;
             }
-            
             const taxaAdm = 0.18;
-            const taxaFundo = 0.005;
             const valorTotal = valorBem * (1 + taxaAdm);
-            const valorParcelaBase = valorTotal / numParcelas;
-            const valorParcela = valorParcelaBase * (1 + (taxaFundo * numParcelas / 2));
+            const valorParcela = valorTotal / numParcelas;
+            resultadoDiv.innerHTML = `<div>💰 Parcela aproximada: <strong class="valor">R$ ${valorParcela.toFixed(2)}</strong></div><small>*Simulação aproximada</small>`;
+        }
+
+        // Conteúdos HTML para demonstração
+        const demos = {
+            vendas: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Demo - Site de Vendas</title><style>body{font-family:Arial;margin:0;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;text-align:center;padding:50px 20px;} h1{font-size:2.5rem;} .btn{background:#ff6b6b;padding:15px 30px;border-radius:50px;color:#fff;text-decoration:none;display:inline-block;margin-top:30px;}</style></head><body><h1>🚀 Oferta Especial</h1><p>Produto incrível com 50% de desconto por tempo limitado!</p><div class="btn">COMPRAR AGORA</div><p style="margin-top:40px;">✔️ Garantia de 30 dias ✔️ Suporte 24h</p></body></html>`,
+            empresa: `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Demo - Site Empresarial</title><style>body{font-family:'Segoe UI',sans-serif;margin:0;background:#f4f7fc;} header{background:#1a2a3a;color:white;padding:20px;text-align:center;} .container{max-width:1100px;margin:auto;padding:30px;} .servicos{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;} .card{background:white;padding:20px;border-radius:15px;box-shadow:0 5px 10px rgba(0,0,0,0.1);width:250px;}</style></head><body><header><h1>LM10 Consultoria</h1><p>Soluções empresariais de alta performance</p></header><div class=container><h2>Nossos Serviços</h2><div class=servicos><div class=card><h3>Gestão Financeira</h3><p>Controle total do seu negócio</p></div><div class=card><h3>Consultoria Estratégica</h3><p>Resultados comprovados</p></div></div></div></body></html>`,
+            catalogo: `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Demo - Catálogo Online</title><style>body{font-family:Arial;background:#fff5f0;margin:0;padding:20px;} .produtos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:1000px;margin:auto;} .produto{background:white;border-radius:20px;padding:20px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.1);} .preco{color:#e67e22;font-size:1.5rem;font-weight:bold;} button{background:#e67e22;border:none;padding:10px 20px;border-radius:30px;color:white;cursor:pointer;}</style></head><body><h1 style="text-align:center;">📦 Nossos Produtos</h1><div class=produtos><div class=produto><h3>Produto A</h3><div class=preco>R$ 49,90</div><button>Comprar</button></div><div class=produto><h3>Produto B</h3><div class=preco>R$ 89,90</div><button>Comprar</button></div><div class=produto><h3>Produto C</h3><div class=preco>R$ 129,90</div><button>Comprar</button></div></div></body></html>`
+        };
+
+        function abrirDemo(tipo) {
+            const modal = document.getElementById("demoModal");
+            const frame = document.getElementById("demoFrame");
+            const loader = document.getElementById("demoLoader");
+            const btn = document.getElementById("btnQuero");
+
+            // Remove classe mobile se existir
+            frame.classList.remove("mobile-view");
+
+            modal.style.display = "block";
+            loader.style.display = "block";
             
-            resultadoDiv.innerHTML = `
-                <div>💰 Valor do bem: <strong class="valor">${formatMoney(valorBem)}</strong></div>
-                <div>📅 ${numParcelas}x de <strong class="valor">${formatMoney(valorParcela)}</strong></div>
-                <div style="font-size: 12px; margin-top: 10px;">*Simulação aproximada</div>
-            `;
-            resultadoDiv.style.color = 'white';
+            // Define o conteúdo do iframe
+            frame.srcdoc = demos[tipo] || demos.vendas;
+
+            // Define link do botão com base no template
+            if (tipo === "vendas") {
+                btn.href = "https://wa.me/554488464080?text=Quero%20o%20site%20de%20vendas%20(modelo%20Landing%20Page)";
+            } else if (tipo === "empresa") {
+                btn.href = "https://wa.me/554488464080?text=Quero%20o%20site%20empresarial%20(modelo%20Institucional)";
+            } else {
+                btn.href = "https://wa.me/554488464080?text=Quero%20o%20catálogo%20online%20(modelo%20Catálogo%20de%20Produtos)";
+            }
+
+            // Esconder loader quando carregar
+            frame.onload = () => {
+                loader.style.display = "none";
+            };
         }
-        
-        function formatMoney(value) {
-            return 'R$ ' + value.toLocaleString('pt-BR', {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            });
+
+        function fecharDemo() {
+            const modal = document.getElementById("demoModal");
+            const frame = document.getElementById("demoFrame");
+            modal.style.display = "none";
+            frame.srcdoc = "";
+            frame.classList.remove("mobile-view");
         }
-        
-        // Permitir Enter nos inputs
-        document.addEventListener('DOMContentLoaded', function() {
-            const inputs = document.querySelectorAll('.simulador-risk input');
-            inputs.forEach(input => {
-                input.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        if (this.id === 'scoreCliente') simularScore();
-                        if (this.id === 'valorBem' || this.id === 'numParcelas') simularParcela();
-                    }
-                });
-            });
+
+        function setView(type) {
+            const frame = document.getElementById("demoFrame");
+            if (type === "mobile") {
+                frame.classList.add("mobile-view");
+            } else {
+                frame.classList.remove("mobile-view");
+            }
+        }
+
+        // Fechar clicando fora
+        window.onclick = function(event) {
+            const modal = document.getElementById("demoModal");
+            if (event.target === modal) {
+                fecharDemo();
+            }
+        };
+
+        // Permitir Enter nos inputs de simulação
+        document.querySelectorAll('.simulador input').forEach(input => {
+            input.addEventListener('keypress', (e) => { if(e.key === 'Enter') simularParcela(); });
         });
     </script>
 </body>
