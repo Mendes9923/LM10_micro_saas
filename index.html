@@ -510,7 +510,7 @@
             transform: translateY(-2px);
         }
 
-        /* Products Grid - 2 colunas para produtos em destaque */
+        /* Products Grid - 3 colunas para produtos em destaque */
         .products-showcase {
             max-width: 1200px;
             margin: 80px auto;
@@ -519,7 +519,7 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -554,12 +554,28 @@
             background: linear-gradient(135deg, #1a1a2e, #16213e);
         }
 
+        .creditflow-img {
+            background: linear-gradient(135deg, #00e5a0, #0075ff);
+        }
+
         .product-badge-grid {
             position: absolute;
             top: 15px;
             left: 15px;
             background: #ff6b6b;
             color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .product-badge-new {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #00e5a0;
+            color: #000;
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.7rem;
@@ -631,6 +647,21 @@
 
         .btn-agenda:hover {
             transform: translateY(-2px);
+        }
+
+        .btn-creditflow {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+
+        .badge-dev {
+            display: inline-block;
+            background: #ff9800;
+            color: #000;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-left: 8px;
         }
 
         /* Business Solutions Section */
@@ -1091,7 +1122,7 @@
             </div>
         </section>
 
-        <!-- Seção de Produtos em Destaque com AgendaPro -->
+        <!-- Seção de Produtos em Destaque com 3 produtos -->
         <section class="products-showcase" id="products">
             <h2 class="section-title">🚀 Produtos em Destaque</h2>
             <div class="products-grid">
@@ -1139,6 +1170,35 @@
                             R$ 9,99<span style="font-size:0.9rem;"> vitalício</span>
                         </div>
                         <a href="https://mendes9923.github.io/pcturbocleaner/" target="_blank" class="btn-agenda" style="background: linear-gradient(135deg, #667eea, #764ba2);">💻 Saiba Mais →</a>
+                    </div>
+                </div>
+
+                <!-- CreditFlow - Gestão de Empréstimos (EM DESENVOLVIMENTO) -->
+                <div class="product-card-grid">
+                    <div class="product-img creditflow-img">
+                        <span>💰</span>
+                        <span class="product-badge-grid">🎯 P2P</span>
+                        <span class="product-badge-new">🚧 EM DEV</span>
+                    </div>
+                    <div class="product-info-grid">
+                        <h3>CreditFlow <span class="badge-dev">Em Desenvolvimento</span></h3>
+                        <p>Gestão inteligente de empréstimos privados. Controle total de clientes, parcelas e inadimplência com relatórios completos.</p>
+                        <ul class="product-features-grid">
+                            <li>Controle de clientes com referências</li>
+                            <li>Cálculo automático de juros e multas</li>
+                            <li>Avisos de vencimento via WhatsApp</li>
+                            <li>Dashboard com métricas e inadimplência</li>
+                            <li>Contratos personalizáveis e comprovantes</li>
+                        </ul>
+                        <!-- SEM PREÇO - PROGRAMA EM DESENVOLVIMENTO -->
+                        <div class="price-grid" style="color: #ff9800;">
+                            🚧 Em desenvolvimento
+                            <small>Preço a definir</small>
+                        </div>
+                        <!-- BOTÃO DIRETO PARA WHATSAPP -->
+                        <a href="https://wa.me/554488464080?text=Olá!%20Tenho%20interesse%20no%20sistema%20CreditFlow%20(Gestão%20de%20Empréstimos)%20em%20desenvolvimento.%20Quero%20saber%20mais!" 
+                           target="_blank" 
+                           class="btn-agenda btn-creditflow">💬 Quero saber mais →</a>
                     </div>
                 </div>
             </div>
@@ -1285,6 +1345,10 @@
                     <p>"O AgendaPro transformou minha barbearia. Nunca foi tão fácil gerenciar agendamentos e clientes. Ferramenta incrível!"</p>
                     <div class="testimonial-author">- Ricardo Mendes, Empresário</div>
                 </div>
+                <div class="testimonial-card">
+                    <p>"Aguardando ansiosamente o lançamento do CreditFlow! A prévia que vi está fantástica, vai revolucionar a gestão de empréstimos."</p>
+                    <div class="testimonial-author">- Cliente em espera</div>
+                </div>
             </div>
         </section>
 
@@ -1293,10 +1357,10 @@
             <h2 class="section-title">Próximos Lançamentos</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
-                    <h3 style="margin-bottom: 1rem;">SaaS Gestão Empresarial</h3>
-                    <p>Sistema completo com módulos financeiro, RH, compras e vendas integrados.</p>
-                    <span style="display: inline-block; background: #e2e8f0; padding: 5px 15px; border-radius: 50px; margin-top: 1rem;">Em desenvolvimento</span>
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💰</div>
+                    <h3 style="margin-bottom: 1rem;">CreditFlow <span class="badge-dev">Em desenvolvimento</span></h3>
+                    <p>Gestão inteligente de empréstimos privados com automação de avisos via WhatsApp e controle total de inadimplência.</p>
+                    <span style="display: inline-block; background: #ff9800; color: #000; padding: 5px 15px; border-radius: 50px; margin-top: 1rem;">🚧 Em breve</span>
                 </div>
                 <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
                     <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤖</div>
@@ -1331,6 +1395,7 @@
                 <h4>Soluções</h4>
                 <a href="#products">AgendaPro</a>
                 <a href="#products">PC Turbo Cleaner PRO</a>
+                <a href="#products">CreditFlow (Em breve)</a>
                 <a href="#free">Unificador Excel Grátis</a>
                 <a href="#consorcio">Gerenciamento de Consórcios</a>
                 <a href="#business">Sistemas Financeiros</a>
