@@ -3,1518 +3,1116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LM10 Solutions - Sistemas SaaS & Soluções Empresariais</title>
+    <title>LM10 Solutions — Sistemas & Soluções Empresariais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --ink: #0b0e17;
+            --ink2: #1c2135;
+            --mist: #f4f5f8;
+            --white: #ffffff;
+            --accent: #3b5bdb;
+            --accent2: #5c7cfa;
+            --gold: #f59f00;
+            --green: #12b886;
+            --red: #f03e3e;
+            --text: #2c3147;
+            --muted: #6c7293;
+            --border: rgba(59,91,219,.12);
+            --card-shadow: 0 2px 20px rgba(11,14,23,.06), 0 1px 4px rgba(11,14,23,.04);
+            --card-shadow-hover: 0 16px 48px rgba(11,14,23,.12), 0 4px 12px rgba(11,14,23,.06);
         }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            line-height: 1.6;
+            font-family: 'DM Sans', sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Header */
+        /* ── NAV ── */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+            background: rgba(255,255,255,.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            transition: box-shadow .3s;
         }
+        header.scrolled { box-shadow: 0 4px 24px rgba(11,14,23,.07); }
 
         nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1160px; margin: 0 auto;
+            padding: 0 24px;
+            height: 68px;
+            display: flex; align-items: center; justify-content: space-between;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.45rem; font-weight: 800;
+            color: var(--ink);
+            letter-spacing: -.5px;
         }
+        .logo span { color: var(--accent); }
 
+        .nav-links { display: flex; align-items: center; gap: 2rem; }
         .nav-links a {
-            margin-left: 2rem;
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-size: .875rem; font-weight: 500;
+            color: var(--muted); text-decoration: none;
+            transition: color .2s;
         }
+        .nav-links a:hover { color: var(--ink); }
 
-        .nav-links a:hover {
-            color: #667eea;
+        .nav-cta {
+            background: var(--accent); color: var(--white) !important;
+            padding: 9px 22px; border-radius: 8px;
+            font-size: .875rem !important;
+            transition: background .2s, transform .2s !important;
         }
+        .nav-cta:hover { background: #2f4bbf !important; transform: translateY(-1px); }
 
-        /* WhatsApp float button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
+        /* ── WA FLOAT ── */
+        .wa-float {
+            position: fixed; bottom: 28px; right: 28px; z-index: 800;
+            width: 56px; height: 56px;
             background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
             border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            line-height: 60px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transition: transform 0.3s;
+            display: flex; align-items: center; justify-content: center;
             text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37,211,102,.45);
+            transition: transform .25s, box-shadow .25s;
         }
+        .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,.55); }
+        .wa-float svg { width: 28px; height: 28px; fill: white; }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            color: white;
-        }
-
-        /* Main content */
-        .main-content {
-            margin-top: 80px;
-        }
-
-        /* Hero Section */
+        /* ── HERO ── */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 100px 20px;
+            padding: 148px 24px 100px;
+            background: var(--ink);
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(59,91,219,.22) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(92,124,250,.1) 0%, transparent 60%);
+        }
+        .hero-grid {
+            position: absolute; inset: 0; pointer-events: none;
+            background-image: linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .hero-inner {
+            max-width: 780px; margin: 0 auto;
+            position: relative; z-index: 1;
             text-align: center;
         }
-
+        .hero-tag {
+            display: inline-block;
+            background: rgba(59,91,219,.25);
+            color: #93a8fd;
+            border: 1px solid rgba(59,91,219,.35);
+            padding: 5px 16px; border-radius: 50px;
+            font-size: .78rem; font-weight: 600;
+            letter-spacing: .8px; text-transform: uppercase;
+            margin-bottom: 24px;
+        }
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
         }
-
+        .hero h1 em { font-style: normal; color: var(--accent2); }
         .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 40px;
-            background: white;
-            color: #667eea;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
+            color: rgba(255,255,255,.62);
             font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 1s ease 0.4s both;
+            max-width: 580px; margin: 0 auto 36px;
         }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 28px;
+            background: var(--accent); color: white;
+            border-radius: 10px; text-decoration: none;
+            font-weight: 600; font-size: .95rem;
+            transition: background .2s, transform .2s, box-shadow .2s;
+            box-shadow: 0 4px 20px rgba(59,91,219,.4);
         }
-
-        /* Free Product Section */
-        .free-product {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
+        .btn-primary:hover { background: #2f4bbf; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(59,91,219,.5); }
+        .btn-ghost {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 28px;
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.18);
+            color: white; border-radius: 10px; text-decoration: none;
+            font-weight: 600; font-size: .95rem;
+            transition: background .2s, transform .2s;
         }
+        .btn-ghost:hover { background: rgba(255,255,255,.14); transform: translateY(-2px); }
 
-        .free-badge {
+        .hero-stats {
+            margin-top: 64px;
+            display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+        }
+        .stat { text-align: center; }
+        .stat strong {
+            display: block;
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem; font-weight: 800;
+            color: white; letter-spacing: -1px;
+        }
+        .stat span { font-size: .82rem; color: rgba(255,255,255,.45); }
+
+        /* ── SECTION COMMONS ── */
+        section { padding: 96px 24px; }
+        .container { max-width: 1160px; margin: 0 auto; }
+
+        .section-eyebrow {
             display: inline-block;
-            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
+            background: rgba(59,91,219,.08);
+            color: var(--accent);
+            border: 1px solid rgba(59,91,219,.2);
+            padding: 4px 14px; border-radius: 50px;
+            font-size: .75rem; font-weight: 600;
+            letter-spacing: .8px; text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 800; color: var(--ink);
+            letter-spacing: -1px; line-height: 1.15;
+            margin-bottom: 12px;
+        }
+        .section-sub {
+            color: var(--muted); font-size: .975rem;
+            max-width: 500px; margin-bottom: 56px;
         }
 
-        .free-card {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        /* ── FREE TOOL ── */
+        #free { background: var(--mist); }
+        .free-banner {
+            background: var(--white);
+            border: 1px solid var(--border);
             border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            padding: 2rem;
-            color: white;
+            padding: 48px;
+            box-shadow: var(--card-shadow);
+            display: grid; grid-template-columns: 1fr auto;
+            gap: 40px; align-items: center;
         }
-
-        .free-card h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        .free-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem; font-weight: 800;
+            color: var(--ink); margin-bottom: 10px; letter-spacing: -.5px;
         }
-
+        .free-desc { color: var(--muted); margin-bottom: 24px; }
+        .tag-free {
+            display: inline-block;
+            background: #ebfbee; color: #2f9e44;
+            border: 1px solid #b2f2bb;
+            padding: 4px 12px; border-radius: 50px;
+            font-size: .75rem; font-weight: 700;
+            letter-spacing: .5px; margin-bottom: 16px;
+        }
         .free-features {
             list-style: none;
-            margin: 1.5rem 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 0.8rem;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px;
+            margin-bottom: 28px;
         }
-
         .free-features li {
-            display: flex;
-            align-items: center;
+            font-size: .875rem; color: var(--text);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .free-features li::before {
+            content: ''; flex-shrink: 0;
+            width: 18px; height: 18px;
+            background: var(--green);
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 8l3.5 3.5L13 4.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-size: 12px; background-repeat: no-repeat; background-position: center;
+        }
+        .free-visual {
+            width: 180px; height: 180px;
+            background: linear-gradient(135deg, #e7f5ff, #d0ebff);
+            border-radius: 24px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 4.5rem;
+            border: 1px solid #a5d8ff;
+            flex-shrink: 0;
         }
 
-        .free-features li:before {
-            content: "✓";
-            margin-right: 10px;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .use-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background: white;
-            color: #f5576c;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            margin-top: 1rem;
-            transition: transform 0.3s;
-        }
-
-        .use-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Consorcio Product */
-        .consorcio-product {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-        .consorcio-card {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            color: white;
-        }
-
-        .consorcio-header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            padding: 30px;
-            text-align: center;
-        }
-
-        .consorcio-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .consorcio-header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .consorcio-badge {
-            display: inline-block;
-            background: #ff6b6b;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            margin-top: 15px;
-        }
-
-        .consorcio-content {
-            padding: 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .consorcio-features h3,
-        .consorcio-demo h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #667eea;
-        }
-
-        .consorcio-features ul {
-            list-style: none;
-        }
-
-        .consorcio-features li {
-            margin: 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .consorcio-features li:before {
-            content: "🚀";
-            font-size: 1.2rem;
-        }
-
-        .demo-container {
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .simulador {
-            background: rgba(255,255,255,0.15);
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .simulador input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-
-        .simulador button {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: transform 0.3s;
-        }
-
-        .simulador button:hover {
-            transform: translateY(-2px);
-        }
-
-        .resultado-simulacao {
-            margin-top: 15px;
-            padding: 15px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .resultado-simulacao .valor {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ffd700;
-        }
-
-        .consorcio-cta {
-            grid-column: span 2;
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .consorcio-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #28a745, #20c997);
-            color: white;
-            text-decoration: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s;
-        }
-
-        .consorcio-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        /* Iframe Container */
-        .iframe-container {
-            max-width: 1400px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .iframe-wrapper {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-
-        .iframe-header {
-            background: #2d3748;
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .iframe-header span {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .open-new-tab {
-            background: #667eea;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: bold;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .open-new-tab:hover {
-            background: #764ba2;
-            transform: translateY(-2px);
-        }
-
-        .wakeup-alert {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 15px 20px;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .wakeup-tip {
-            background: #e8f5e9;
-            border-left: 4px solid #4caf50;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            font-size: 0.85rem;
-            color: #2e7d32;
-        }
-
-        iframe {
-            width: 100%;
-            height: 700px;
-            border: none;
-            display: block;
-        }
-
-        /* Featured Product */
-        .featured-product {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            padding: 2rem;
-        }
-
-        .product-info h3 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        .product-badge {
-            display: inline-block;
-            background: #ff6b6b;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .product-features {
-            list-style: none;
-            margin: 2rem 0;
-        }
-
-        .product-features li {
-            margin: 1rem 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .product-features li:before {
-            content: "✓";
-            color: #667eea;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .rating {
-            color: #ffc107;
-            font-size: 1.2rem;
-            margin: 1rem 0;
-        }
-
-        .price {
-            font-size: 2rem;
-            color: #667eea;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
-
-        .product-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: transform 0.3s;
-        }
-
-        .product-button:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Products Grid - 3 colunas para produtos em destaque */
-        .products-showcase {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
+        /* ── PRODUCTS ── */
+        #products { background: var(--white); }
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
         }
+        .product-card {
+            background: var(--white);
+            border: 1px solid #e8eaf2;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform .25s, box-shadow .25s, border-color .25s;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: rgba(59,91,219,.2);
+        }
+        .product-thumb {
+            height: 200px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3.5rem; position: relative;
+        }
+        .thumb-pc { background: linear-gradient(135deg, #0f0f1a, #1a1a35); }
+        .thumb-credit { background: linear-gradient(135deg, #0a1f1a, #0f3028); }
 
-        .product-card-grid {
-            background: white;
+        .prod-badge {
+            position: absolute; top: 14px; left: 14px;
+            padding: 4px 12px; border-radius: 50px;
+            font-size: .7rem; font-weight: 700;
+        }
+        .badge-hot { background: #fff3f3; color: var(--red); border: 1px solid #ffc9c9; }
+        .badge-dev { background: #fff4e6; color: #e8590c; border: 1px solid #ffd8a8; }
+        .badge-new { background: #ebfbee; color: #2f9e44; border: 1px solid #b2f2bb; }
+
+        .prod-body { padding: 28px; }
+        .prod-body h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem; font-weight: 800;
+            color: var(--ink); margin-bottom: 8px; letter-spacing: -.3px;
+        }
+        .prod-body p { font-size: .875rem; color: var(--muted); margin-bottom: 18px; line-height: 1.6; }
+        .prod-feats { list-style: none; margin-bottom: 22px; }
+        .prod-feats li {
+            font-size: .825rem; color: var(--text);
+            padding: 5px 0; display: flex; align-items: center; gap: 8px;
+            border-bottom: 1px solid #f0f1f5;
+        }
+        .prod-feats li:last-child { border-bottom: none; }
+        .prod-feats li::before {
+            content: ''; flex-shrink: 0;
+            width: 16px; height: 16px;
+            background: var(--accent);
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 8l3.5 3.5L13 4.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-size: 10px; background-repeat: no-repeat; background-position: center;
+        }
+        .price-row {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 18px;
+        }
+        .price-main {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.6rem; font-weight: 800; color: var(--ink); letter-spacing: -.5px;
+        }
+        .price-sub { font-size: .78rem; color: var(--muted); font-weight: 400; }
+        .price-dev { font-size: 1rem; font-weight: 600; color: #e8590c; }
+        .btn-card {
+            display: block; text-align: center;
+            padding: 12px; border-radius: 10px;
+            font-weight: 600; font-size: .9rem;
+            text-decoration: none; transition: transform .2s, box-shadow .2s;
+        }
+        .btn-card:hover { transform: translateY(-2px); }
+        .btn-blue { background: var(--accent); color: white; box-shadow: 0 4px 16px rgba(59,91,219,.3); }
+        .btn-blue:hover { background: #2f4bbf; box-shadow: 0 6px 22px rgba(59,91,219,.4); }
+        .btn-wa { background: #25D366; color: white; box-shadow: 0 4px 16px rgba(37,211,102,.3); }
+        .btn-wa:hover { background: #1dab52; box-shadow: 0 6px 22px rgba(37,211,102,.4); }
+
+        /* ── CONSORCIO ── */
+        #consorcio { background: var(--mist); }
+        .consorcio-wrap {
+            background: var(--ink);
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .consorcio-top {
+            padding: 48px 48px 36px;
+            background: linear-gradient(135deg, var(--ink2) 0%, #0f1528 100%);
+            border-bottom: 1px solid rgba(255,255,255,.06);
+            display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;
+        }
+        .consorcio-top .section-eyebrow { background: rgba(59,91,219,.2); }
+        .consorcio-top .section-title { color: white; max-width: 500px; }
+        .consorcio-top p { color: rgba(255,255,255,.5); font-size: .9rem; max-width: 420px; }
+        .tag-desktop {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(59,91,219,.2); color: #93a8fd;
+            border: 1px solid rgba(59,91,219,.3);
+            padding: 8px 18px; border-radius: 50px;
+            font-size: .8rem; font-weight: 600; white-space: nowrap;
+        }
+        .consorcio-body {
+            padding: 48px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+        }
+        .feat-list { list-style: none; }
+        .feat-list li {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,.06);
+            display: flex; align-items: center; gap: 14px;
+            color: rgba(255,255,255,.8); font-size: .9rem;
+        }
+        .feat-list li:last-child { border-bottom: none; }
+        .feat-icon {
+            width: 36px; height: 36px; border-radius: 10px;
+            background: rgba(59,91,219,.2);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; flex-shrink: 0;
+        }
+        .sim-box {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 16px; padding: 28px;
+        }
+        .sim-box h4 {
+            font-family: 'Syne', sans-serif; font-weight: 800;
+            color: white; font-size: 1.1rem; margin-bottom: 20px; letter-spacing: -.3px;
+        }
+        .sim-input {
+            width: 100%; padding: 12px 16px;
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 10px; color: white; font-size: .9rem;
+            font-family: 'DM Sans', sans-serif;
+            margin-bottom: 12px; outline: none;
+            transition: border-color .2s;
+        }
+        .sim-input::placeholder { color: rgba(255,255,255,.35); }
+        .sim-input:focus { border-color: var(--accent2); }
+        .sim-btn {
+            width: 100%; padding: 13px;
+            background: var(--accent); color: white;
+            border: none; border-radius: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .9rem; font-weight: 600;
+            cursor: pointer; transition: background .2s, transform .2s;
+        }
+        .sim-btn:hover { background: #2f4bbf; transform: translateY(-1px); }
+        .sim-result {
+            margin-top: 16px; padding: 16px; border-radius: 10px;
+            background: rgba(255,255,255,.05);
+            text-align: center; color: rgba(255,255,255,.6); font-size: .875rem;
+        }
+        .sim-result .big { font-family: 'Syne', sans-serif; font-size: 1.8rem; color: var(--gold); font-weight: 800; display: block; }
+        .consorcio-footer {
+            padding: 28px 48px; border-top: 1px solid rgba(255,255,255,.06);
+            display: flex; justify-content: center;
         }
 
-        .product-card-grid:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        /* ── EXCEL EMBED ── */
+        #excel-unifier { background: var(--white); padding: 0; }
+        .embed-wrap {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
+        .embed-bar {
+            background: var(--ink);
+            padding: 14px 28px;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+        }
+        .embed-bar span { color: rgba(255,255,255,.7); font-size: .85rem; }
+        .btn-embed {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(255,255,255,.1); color: white;
+            padding: 7px 16px; border-radius: 8px;
+            text-decoration: none; font-size: .82rem; font-weight: 600;
+            border: 1px solid rgba(255,255,255,.15);
+            transition: background .2s;
+        }
+        .btn-embed:hover { background: rgba(255,255,255,.18); }
+        .embed-notice {
+            background: #fff8e1; padding: 12px 28px;
+            font-size: .82rem; color: #7c5900;
+            display: flex; align-items: center; gap: 10px;
+            border-bottom: 1px solid #ffe69c;
+        }
+        .embed-wrap iframe { display: block; width: 100%; height: 700px; border: none; }
 
-        .product-img {
-            height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            position: relative;
-        }
-
-        .agenda-img {
-            background: linear-gradient(135deg, #E11D48, #F43F5E);
-        }
-
-        .pcturbo-img {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-        }
-
-        .creditflow-img {
-            background: linear-gradient(135deg, #00e5a0, #0075ff);
-        }
-
-        .product-badge-grid {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #ff6b6b;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: bold;
-        }
-
-        .product-badge-new {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #00e5a0;
-            color: #000;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: bold;
-        }
-
-        .product-info-grid {
-            padding: 24px;
-        }
-
-        .product-info-grid h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #1e293b;
-        }
-
-        .product-info-grid p {
-            color: #64748b;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .product-features-grid {
-            list-style: none;
-            margin: 1rem 0;
-        }
-
-        .product-features-grid li {
-            padding: 6px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            color: #334155;
-        }
-
-        .product-features-grid li:before {
-            content: "✓";
-            color: #10b981;
-            font-weight: bold;
-        }
-
-        .price-grid {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #E11D48;
-            margin: 1rem 0;
-        }
-
-        .price-grid small {
-            font-size: 0.8rem;
-            color: #94a3b8;
-            font-weight: normal;
-        }
-
-        .btn-agenda {
-            display: inline-block;
-            width: 100%;
-            background: linear-gradient(135deg, #E11D48, #F43F5E);
-            color: white;
-            text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 40px;
-            font-weight: bold;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .btn-agenda:hover {
-            transform: translateY(-2px);
-        }
-
-        .btn-creditflow {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-        }
-
-        .badge-dev {
-            display: inline-block;
-            background: #ff9800;
-            color: #000;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: bold;
-            margin-left: 8px;
-        }
-
-        /* Business Solutions Section */
-        .business-solutions {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 80px 20px;
-            color: white;
-        }
+        /* ── SOLUTIONS ── */
+        #business { background: var(--ink); }
+        #business .section-eyebrow { background: rgba(59,91,219,.2); color: #93a8fd; }
+        #business .section-title { color: white; }
+        #business .section-sub { color: rgba(255,255,255,.45); }
 
         .solutions-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+        }
+        .sol-card {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 18px; padding: 32px;
+            transition: background .25s, border-color .25s, transform .25s;
+        }
+        .sol-card:hover {
+            background: rgba(255,255,255,.07);
+            border-color: rgba(59,91,219,.4);
+            transform: translateY(-4px);
+        }
+        .sol-icon {
+            width: 52px; height: 52px; border-radius: 14px;
+            background: rgba(59,91,219,.2);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; margin-bottom: 20px;
+        }
+        .sol-card h3 {
+            font-family: 'Syne', sans-serif; font-weight: 800;
+            color: white; font-size: 1.1rem; margin-bottom: 10px; letter-spacing: -.3px;
+        }
+        .sol-card p { color: rgba(255,255,255,.45); font-size: .875rem; margin-bottom: 24px; }
+        .btn-sol {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #25D366; color: white;
+            padding: 10px 22px; border-radius: 8px;
+            font-size: .85rem; font-weight: 600; text-decoration: none;
+            transition: background .2s, transform .2s;
+        }
+        .btn-sol:hover { background: #1dab52; transform: translateY(-1px); }
+
+        /* ── SITES ── */
+        #sites { background: var(--mist); }
+        .sites-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;
+        }
+        .site-card {
+            background: var(--white);
+            border: 1px solid #e8eaf2;
+            border-radius: 18px; overflow: hidden;
+            transition: transform .25s, box-shadow .25s;
+        }
+        .site-card:hover { transform: translateY(-5px); box-shadow: var(--card-shadow-hover); }
+        .site-thumb {
+            height: 140px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; font-weight: 700;
+        }
+        .site-body { padding: 22px; }
+        .site-body h3 {
+            font-family: 'Syne', sans-serif; font-weight: 800;
+            font-size: 1rem; color: var(--ink); margin-bottom: 6px;
+        }
+        .site-body p { font-size: .825rem; color: var(--muted); margin-bottom: 14px; }
+        .site-price {
+            font-weight: 700; color: var(--accent); font-size: .95rem; margin-bottom: 14px;
+        }
+        .btn-demo {
+            display: block; text-align: center;
+            padding: 10px; border-radius: 8px;
+            background: var(--mist); color: var(--text);
+            border: 1px solid #e0e2ed;
+            font-weight: 600; font-size: .85rem;
+            cursor: pointer; transition: background .2s, border-color .2s;
+        }
+        .btn-demo:hover { background: #e8eaf2; border-color: #c4c9e0; }
+
+        /* ── TESTIMONIALS ── */
+        #testimonials { background: var(--white); }
+        .testi-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+        }
+        .testi-card {
+            background: var(--mist);
+            border: 1px solid #e4e6ef;
+            border-radius: 16px; padding: 28px;
+            transition: transform .25s;
+        }
+        .testi-card:hover { transform: translateY(-3px); }
+        .stars { color: var(--gold); font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
+        .testi-card p { font-size: .9rem; color: var(--text); font-style: italic; margin-bottom: 18px; line-height: 1.7; }
+        .testi-author { font-weight: 600; font-size: .82rem; color: var(--accent); }
+
+        /* ── UPCOMING ── */
+        #upcoming { background: var(--mist); padding-top: 0; }
+        .upcoming-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+        }
+        .upcoming-card {
+            background: var(--white); border: 1px dashed #d0d4e8;
+            border-radius: 16px; padding: 32px; text-align: center;
+        }
+        .upcoming-icon { font-size: 2.5rem; margin-bottom: 16px; }
+        .upcoming-card h3 {
+            font-family: 'Syne', sans-serif; font-weight: 800;
+            font-size: 1.1rem; color: var(--ink); margin-bottom: 10px;
+        }
+        .upcoming-card p { font-size: .875rem; color: var(--muted); margin-bottom: 18px; }
+        .badge-soon {
+            display: inline-block; background: #fff4e6; color: #e8590c;
+            border: 1px solid #ffd8a8;
+            padding: 5px 14px; border-radius: 50px;
+            font-size: .75rem; font-weight: 700;
         }
 
-        .solution-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        /* ── CTA ── */
+        .cta-band {
+            background: var(--accent);
+            padding: 80px 24px; text-align: center;
+            position: relative; overflow: hidden;
         }
-
-        .solution-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.2);
+        .cta-band::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 70% 90% at 50% 50%, rgba(255,255,255,.08) 0%, transparent 70%);
         }
-
-        .solution-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .cta-band h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
+            color: white; letter-spacing: -1px; margin-bottom: 14px;
         }
-
-        .solution-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .cta-band p { color: rgba(255,255,255,.7); font-size: 1rem; margin-bottom: 32px; }
+        .btn-cta-white {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 15px 32px;
+            background: white; color: var(--accent);
+            border-radius: 10px; text-decoration: none;
+            font-weight: 700; font-size: 1rem;
+            transition: transform .2s, box-shadow .2s;
+            box-shadow: 0 4px 20px rgba(0,0,0,.15);
         }
+        .btn-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.2); }
 
-        .solution-card p {
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-        }
-
-        .solution-whatsapp {
-            display: inline-block;
-            padding: 10px 25px;
-            background: #25D366;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: transform 0.3s;
-            margin-top: 1rem;
-        }
-
-        .solution-whatsapp:hover {
-            transform: scale(1.05);
-            color: white;
-        }
-
-        /* Websites Section */
-        .websites-section {
-            background: white;
-            padding: 80px 20px;
-        }
-
-        .websites-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .website-card {
-            background: #fff;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #e2e8f0;
-        }
-
-        .website-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 35px rgba(0,0,0,0.15);
-        }
-
-        .website-preview {
-            height: 150px;
-            border-radius: 15px;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .website-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
-            color: #2d3748;
-        }
-
-        .price-tag {
-            font-weight: bold;
-            color: #667eea;
-            font-size: 1.2rem;
-            margin: 0.8rem 0;
-        }
-
-        .demo-link {
-            display: inline-block;
-            margin-top: 0.8rem;
-            background: #667eea;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-            font-size: 0.9rem;
-        }
-
-        .demo-link:hover {
-            background: #764ba2;
-            transform: scale(1.03);
-        }
-
-        /* Testimonials */
-        .testimonials {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 1rem;
-            color: #4a5568;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section .cta-button {
-            background: white;
-            color: #667eea;
-            margin-top: 2rem;
-        }
-
-        /* Modal */
-        .demo-modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            inset: 0;
-            background: rgba(0,0,0,0.85);
-        }
-
-        .demo-content {
-            width: 95%;
-            height: 95%;
-            margin: 1% auto;
-            background: #111;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .demo-header {
-            background: #1f2937;
-            color: white;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .demo-left span {
-            font-weight: bold;
-            font-size: 1rem;
-        }
-
-        .demo-controls button {
-            margin: 0 5px;
-            background: #374151;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            cursor: pointer;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-
-        .demo-controls button:hover {
-            background: #667eea;
-            transform: scale(1.05);
-        }
-
-        .demo-right button {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            padding: 8px 15px;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-
-        .demo-right button:hover {
-            background: rgba(255,255,255,0.4);
-            transform: scale(1.05);
-        }
-
-        .demo-loader {
-            text-align: center;
-            padding: 12px;
-            background: #000;
-            color: #fff;
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
-
-        .demo-loader span {
-            display: inline-block;
-            animation: pulse 1.5s ease infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
-
-        .iframe-wrapper {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #000;
-            padding: 10px;
-        }
-
-        #demoFrame {
-            width: 100%;
-            height: 100%;
-            border: none;
-            transition: all 0.3s ease;
-            background: white;
-            border-radius: 0;
-        }
-
-        .mobile-view {
-            width: 375px !important;
-            height: 667px !important;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(255,255,255,0.2);
-        }
-
-        .demo-footer {
-            background: #111;
-            padding: 15px;
-            text-align: center;
-        }
-
-        .demo-footer a {
-            background: linear-gradient(135deg, #25D366, #20c997);
-            color: white;
-            padding: 12px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .demo-footer a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-        }
-
-        /* Footer */
+        /* ── FOOTER ── */
         footer {
-            background: #2d3748;
-            color: white;
-            padding: 40px 20px;
+            background: var(--ink); color: rgba(255,255,255,.55);
+            padding: 60px 24px 32px;
+        }
+        .footer-inner {
+            max-width: 1160px; margin: 0 auto;
+            display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+        }
+        .footer-brand .logo { font-size: 1.3rem; }
+        .footer-brand p { font-size: .85rem; line-height: 1.7; margin-top: 12px; }
+        .footer-brand .phone { margin-top: 16px; font-size: .85rem; color: rgba(255,255,255,.4); }
+        footer h5 {
+            font-family: 'Syne', sans-serif; font-weight: 800;
+            color: white; font-size: .9rem; margin-bottom: 16px; letter-spacing: .3px;
+        }
+        footer a {
+            display: block; color: rgba(255,255,255,.45);
+            text-decoration: none; font-size: .85rem;
+            margin-bottom: 8px; transition: color .2s;
+        }
+        footer a:hover { color: rgba(255,255,255,.85); }
+        .footer-line {
+            max-width: 1160px; margin: 40px auto 0;
+            padding-top: 24px; border-top: 1px solid rgba(255,255,255,.07);
+            text-align: center; font-size: .78rem; color: rgba(255,255,255,.3);
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+        /* ── MODAL ── */
+        .modal-overlay {
+            display: none; position: fixed; inset: 0; z-index: 9000;
+            background: rgba(11,14,23,.88); backdrop-filter: blur(6px);
+            align-items: center; justify-content: center;
         }
-
-        .footer-section h4 {
-            margin-bottom: 1rem;
+        .modal-overlay.open { display: flex; }
+        .modal-box {
+            width: 94%; max-width: 1100px; height: 92vh;
+            background: #0f1220;
+            border-radius: 16px; overflow: hidden;
+            display: flex; flex-direction: column;
+            border: 1px solid rgba(255,255,255,.08);
         }
-
-        .footer-section a {
-            color: #a0aec0;
-            text-decoration: none;
-            display: block;
-            margin: 0.5rem 0;
-            transition: color 0.3s;
+        .modal-bar {
+            background: #1a1e2e;
+            padding: 12px 20px;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,.07);
         }
-
-        .footer-section a:hover {
-            color: white;
+        .modal-bar span { color: rgba(255,255,255,.7); font-size: .85rem; font-weight: 500; }
+        .modal-controls { display: flex; gap: 8px; }
+        .modal-controls button, .modal-close {
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.12);
+            color: white; padding: 7px 16px; border-radius: 8px;
+            font-size: .8rem; font-weight: 600; cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: background .2s;
         }
-
-        .copyright {
+        .modal-controls button:hover, .modal-close:hover { background: rgba(255,255,255,.16); }
+        .modal-loader {
+            text-align: center; padding: 12px; font-size: .8rem;
+            color: rgba(255,255,255,.5); background: #000;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse { 0%,100%{opacity:.5} 50%{opacity:1} }
+        .modal-frame-wrap {
+            flex: 1; background: #000;
+            display: flex; align-items: center; justify-content: center;
+        }
+        #demoFrame {
+            width: 100%; height: 100%; border: none;
+            background: white;
+        }
+        #demoFrame.mobile { width: 375px; height: 667px; border-radius: 16px; }
+        .modal-foot {
+            padding: 14px 20px; background: #111826;
+            border-top: 1px solid rgba(255,255,255,.07);
             text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #4a5568;
-            color: #a0aec0;
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .btn-modal-cta {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 30px; border-radius: 10px;
+            background: #25D366; color: white; text-decoration: none;
+            font-weight: 700; font-size: .95rem;
+            transition: background .2s, transform .2s;
         }
+        .btn-modal-cta:hover { background: #1dab52; transform: translateY(-1px); }
 
+        /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .product-card {
-                grid-template-columns: 1fr;
-            }
-            .consorcio-content {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                display: none;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
-            .mobile-view {
-                width: 320px !important;
-                height: 600px !important;
-            }
-            .demo-controls button {
-                padding: 5px 10px;
-                font-size: 0.8rem;
-            }
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
+            .nav-links { display: none; }
+            .free-banner { grid-template-columns: 1fr; }
+            .free-visual { display: none; }
+            .free-features { grid-template-columns: 1fr; }
+            .consorcio-body { grid-template-columns: 1fr; }
+            .consorcio-top { flex-direction: column; }
+            .footer-inner { grid-template-columns: 1fr; }
+            .hero-stats { gap: 28px; }
+            .stat strong { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body>
-    <a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20ajuda%20com%20soluções%20empresariais%20e%20sistemas%20SaaS." 
-       class="whatsapp-float" target="_blank">💬</a>
 
-    <header>
-        <nav>
-            <div class="logo">LM10 Solutions</div>
-            <div class="nav-links">
-                <a href="#home">Início</a>
-                <a href="#free">Grátis</a>
-                <a href="#consorcio">Consórcios</a>
-                <a href="#products">Produtos</a>
-                <a href="#business">Soluções</a>
-                <a href="#sites">Sites</a>
-                <a href="#testimonials">Depoimentos</a>
-                <a href="#contact">Contato</a>
+<a href="https://wa.me/554488464080?text=Olá!%20Preciso%20de%20ajuda%20com%20soluções%20empresariais%20e%20sistemas%20SaaS." class="wa-float" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<header id="site-header">
+    <nav>
+        <div class="logo">LM<span>10</span> Solutions</div>
+        <div class="nav-links">
+            <a href="#free">Grátis</a>
+            <a href="#products">Produtos</a>
+            <a href="#consorcio">Consórcios</a>
+            <a href="#business">Soluções</a>
+            <a href="#sites">Sites</a>
+            <a href="#contact" class="nav-cta">Fale conosco</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-grid"></div>
+        <div class="hero-inner">
+            <div class="hero-tag">🚀 Tecnologia para o seu negócio</div>
+            <h1>Sistemas &amp; soluções que <em>realmente funcionam</em></h1>
+            <p>Micro SaaS, sistemas empresariais, automação administrativa e ferramentas gratuitas. Simplificamos a tecnologia para você crescer.</p>
+            <div class="hero-btns">
+                <a href="#products" class="btn-primary">Ver produtos</a>
+                <a href="https://wa.me/554488464080?text=Olá!%20Quero%20conhecer%20as%20soluções%20da%20LM10." class="btn-ghost" target="_blank">💬 Falar agora</a>
             </div>
-        </nav>
-    </header>
-
-    <main class="main-content">
-        <section class="hero" id="home">
-            <h1>Soluções completas para seu PC e sua empresa</h1>
-            <p>Micro SaaS, sistemas empresariais, automação de tarefas administrativas e muito mais. Simplificamos a tecnologia para você!</p>
-            <a href="#free" class="cta-button">🎁 Experimente grátis</a>
-        </section>
-
-        <!-- Produto Grátis Unificador Excel -->
-        <section class="free-product" id="free">
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <span class="free-badge">🎁 100% GRATUITO</span>
-                <h2 class="section-title" style="margin-top: 1rem;">Unificador de Arquivos Excel</h2>
+            <div class="hero-stats">
+                <div class="stat"><strong>+50</strong><span>Clientes atendidos</span></div>
+                <div class="stat"><strong>100%</strong><span>Suporte dedicado</span></div>
+                <div class="stat"><strong>5+</strong><span>Produtos lançados</span></div>
             </div>
-            <div class="free-card">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
-                    <div>
-                        <h3>📊 LM Unificador Excel</h3>
-                        <p>Consolide várias planilhas em segundos!</p>
-                        <ul class="free-features">
-                            <li>Consolide múltiplos arquivos Excel</li>
-                            <li>Adicione coluna com nome do arquivo origem</li>
-                            <li>Selecione colunas específicas</li>
-                            <li>Baixe o resultado em Excel</li>
-                        </ul>
-                        <a href="#excel-unifier" class="use-button">🚀 Usar agora →</a>
-                    </div>
-                    <div style="text-align: center; font-size: 4rem;">📑 ➡️ 📊</div>
+        </div>
+    </section>
+
+    <!-- FREE TOOL -->
+    <section id="free">
+        <div class="container">
+            <div class="section-eyebrow">🎁 Ferramenta gratuita</div>
+            <h2 class="section-title">Unificador de Arquivos Excel</h2>
+            <p class="section-sub">Consolide múltiplas planilhas em segundos, sem instalar nada.</p>
+            <div class="free-banner">
+                <div>
+                    <span class="tag-free">✓ 100% Gratuito</span>
+                    <p class="free-title">LM Unificador Excel</p>
+                    <p class="free-desc">Junte vários arquivos .xlsx em uma única planilha com um clique. Selecione colunas, adicione origem dos dados e exporte o resultado.</p>
+                    <ul class="free-features">
+                        <li>Múltiplos arquivos de uma vez</li>
+                        <li>Coluna com nome do arquivo origem</li>
+                        <li>Seleção de colunas específicas</li>
+                        <li>Exportação em .xlsx</li>
+                    </ul>
+                    <a href="#excel-unifier" class="btn-primary" style="font-size:.9rem; padding:12px 24px;">🚀 Usar agora →</a>
                 </div>
+                <div class="free-visual">📑</div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Seção de Produtos em Destaque com 3 produtos -->
-        <section class="products-showcase" id="products">
-            <h2 class="section-title">🚀 Produtos em Destaque</h2>
+    <!-- PRODUCTS -->
+    <section id="products">
+        <div class="container">
+            <div class="section-eyebrow">💼 Nossos produtos</div>
+            <h2 class="section-title">Soluções prontas para usar</h2>
+            <p class="section-sub">Software desenvolvido com foco em resultados reais para o seu dia a dia.</p>
             <div class="products-grid">
-                <!-- AgendaPro -->
-                <div class="product-card-grid">
-                    <div class="product-img agenda-img">
-                        <span>📅</span>
-                        <span class="product-badge-grid">🔥 LANÇAMENTO</span>
-                    </div>
-                    <div class="product-info-grid">
-                        <h3>AgendaPro</h3>
-                        <p>Sistema de agendamento online completo para profissionais e empresas. Gerencie clientes, horários e finanças em um só lugar.</p>
-                        <ul class="product-features-grid">
-                            <li>Página de agendamento personalizada</li>
-                            <li>Lembretes automáticos por WhatsApp</li>
-                            <li>Dashboard com métricas e relatórios</li>
-                            <li>Gestão de múltiplos profissionais</li>
-                            <li>Controle financeiro integrado</li>
-                        </ul>
-                        <div class="price-grid">
-                            R$ 49<span style="font-size:0.9rem;">/mês</span>
-                            <small>ou R$ 499/ano</small>
-                        </div>
-                        <a href="https://site-de-venda-agenda-pro.vercel.app/" target="_blank" class="btn-agenda">🎯 Conhecer AgendaPro →</a>
-                    </div>
-                </div>
 
                 <!-- PC Turbo Cleaner PRO -->
-                <div class="product-card-grid">
-                    <div class="product-img pcturbo-img">
+                <div class="product-card">
+                    <div class="product-thumb thumb-pc">
                         <span>⚡</span>
-                        <span class="product-badge-grid">⭐ MAIS VENDIDO</span>
+                        <span class="prod-badge badge-hot">⭐ Mais vendido</span>
                     </div>
-                    <div class="product-info-grid">
+                    <div class="prod-body">
                         <h3>PC Turbo Cleaner PRO</h3>
-                        <p>Limpeza profunda, otimização de RAM e modo turbo gamer para seu computador.</p>
-                        <ul class="product-features-grid">
+                        <p>Limpeza profunda, otimização de RAM e modo turbo gamer. Deixe seu PC voando.</p>
+                        <ul class="prod-feats">
                             <li>Limpeza de arquivos temporários</li>
                             <li>Otimização de inicialização</li>
                             <li>Modo Turbo Gamer</li>
                             <li>Liberação de memória RAM</li>
-                            <li>Suporte vitalício</li>
+                            <li>Suporte vitalício incluso</li>
                         </ul>
-                        <div class="price-grid">
-                            R$ 9,99<span style="font-size:0.9rem;"> vitalício</span>
+                        <div class="price-row">
+                            <div>
+                                <div class="price-main">R$ 9,99</div>
+                                <div class="price-sub">Licença vitalícia</div>
+                            </div>
                         </div>
-                        <a href="https://mendes9923.github.io/pcturbocleaner/" target="_blank" class="btn-agenda" style="background: linear-gradient(135deg, #667eea, #764ba2);">💻 Saiba Mais →</a>
+                        <a href="https://mendes9923.github.io/pcturbocleaner/" target="_blank" class="btn-card btn-blue">💻 Saiba mais →</a>
                     </div>
                 </div>
 
-                <!-- CreditFlow - Gestão de Empréstimos (EM DESENVOLVIMENTO) -->
-                <div class="product-card-grid">
-                    <div class="product-img creditflow-img">
+                <!-- CreditFlow -->
+                <div class="product-card">
+                    <div class="product-thumb thumb-credit">
                         <span>💰</span>
-                        <span class="product-badge-grid">🎯 P2P</span>
-                        <span class="product-badge-new">🚧 EM DEV</span>
+                        <span class="prod-badge badge-dev">🚧 Em desenvolvimento</span>
+                        <span class="prod-badge badge-new" style="right:14px;left:auto;">P2P</span>
                     </div>
-                    <div class="product-info-grid">
-                        <h3>CreditFlow <span class="badge-dev">Em Desenvolvimento</span></h3>
-                        <p>Gestão inteligente de empréstimos privados. Controle total de clientes, parcelas e inadimplência com relatórios completos.</p>
-                        <ul class="product-features-grid">
+                    <div class="prod-body">
+                        <h3>CreditFlow</h3>
+                        <p>Gestão inteligente de empréstimos privados. Controle clientes, parcelas e inadimplência com relatórios completos.</p>
+                        <ul class="prod-feats">
                             <li>Controle de clientes com referências</li>
                             <li>Cálculo automático de juros e multas</li>
                             <li>Avisos de vencimento via WhatsApp</li>
-                            <li>Dashboard com métricas e inadimplência</li>
-                            <li>Contratos personalizáveis e comprovantes</li>
+                            <li>Dashboard com métricas</li>
+                            <li>Contratos e comprovantes personalizáveis</li>
                         </ul>
-                        <!-- SEM PREÇO - PROGRAMA EM DESENVOLVIMENTO -->
-                        <div class="price-grid" style="color: #ff9800;">
-                            🚧 Em desenvolvimento
-                            <small>Preço a definir</small>
+                        <div class="price-row">
+                            <div class="price-dev">🚧 Em breve — preço a definir</div>
                         </div>
-                        <!-- BOTÃO DIRETO PARA WHATSAPP -->
-                        <a href="https://wa.me/554488464080?text=Olá!%20Tenho%20interesse%20no%20sistema%20CreditFlow%20(Gestão%20de%20Empréstimos)%20em%20desenvolvimento.%20Quero%20saber%20mais!" 
-                           target="_blank" 
-                           class="btn-agenda btn-creditflow">💬 Quero saber mais →</a>
+                        <a href="https://wa.me/554488464080?text=Olá!%20Tenho%20interesse%20no%20CreditFlow%20em%20desenvolvimento." target="_blank" class="btn-card btn-wa">💬 Quero saber mais →</a>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Produto Consórcios -->
-        <section class="consorcio-product" id="consorcio">
-            <div class="consorcio-card">
-                <div class="consorcio-header">
-                    <h2>🏦 Gerenciamento de Consórcios</h2>
-                    <p>Sistema completo para administração de carteira de consórcios</p>
-                    <div class="consorcio-badge">🔥 Sistema Desktop Completo</div>
-                </div>
-                <div class="consorcio-content">
-                    <div class="consorcio-features">
-                        <h3>🚀 Funcionalidades</h3>
-                        <ul>
-                            <li>Cadastro completo de consórcios</li>
-                            <li>Controle de parcelas pagas e quitadas</li>
-                            <li>Gestão de crédito disponível</li>
-                            <li>Dashboard interativo com gráficos</li>
-                            <li>Backup automático do banco de dados</li>
-                        </ul>
-                    </div>
-                    <div class="consorcio-demo">
-                        <h3>💡 Simulação Interativa</h3>
-                        <div class="demo-container">
-                            <div class="simulador">
-                                <input type="number" id="valorBem" placeholder="Valor do bem (R$)">
-                                <input type="number" id="numParcelas" placeholder="Número de parcelas" value="60">
-                                <button onclick="simularParcela()">📊 SIMULAR PARCELA</button>
-                                <div class="resultado-simulacao" id="resultadoSimulacao">Preencha os valores acima</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="consorcio-cta">
-                        <a href="https://wa.me/554488464080?text=Olá!%20Tenho%20interesse%20no%20Sistema%20de%20Gerenciamento%20de%20Consórcios" class="consorcio-button" target="_blank">💬 SOLICITAR DEMONSTRAÇÃO</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Iframe Unificador Excel -->
-        <div class="iframe-container" id="excel-unifier">
-            <div class="iframe-wrapper">
-                <div class="iframe-header">
-                    <span>🔧 LM Unificador de Excel - Ferramenta Gratuita</span>
-                    <a href="https://uniciacaexcel-wa33jeh6gszmhbppeqrbep.streamlit.app/" class="open-new-tab" target="_blank">📌 Abrir em nova aba</a>
-                </div>
-                <div class="wakeup-alert">⏳ O aplicativo pode levar de 30 a 60 segundos para iniciar. Aguarde.</div>
-                <iframe src="https://uniciacaexcel-wa33jeh6gszmhbppeqrbep.streamlit.app/?embed=true" title="Unificador de Excel"></iframe>
             </div>
         </div>
+    </section>
 
-        <!-- Soluções Empresariais -->
-        <section class="business-solutions" id="business">
-            <h2 class="section-title" style="color:white;">Soluções Administrativas</h2>
+    <!-- CONSORCIO -->
+    <section id="consorcio">
+        <div class="container">
+            <div class="consorcio-wrap">
+                <div class="consorcio-top">
+                    <div>
+                        <div class="section-eyebrow">🏦 Sistema desktop</div>
+                        <h2 class="section-title">Gerenciamento de Consórcios</h2>
+                        <p>Administre sua carteira de consórcios com controle total de parcelas, crédito disponível e relatórios interativos.</p>
+                    </div>
+                    <div class="tag-desktop">🖥️ Sistema Desktop Completo</div>
+                </div>
+                <div class="consorcio-body">
+                    <div>
+                        <ul class="feat-list">
+                            <li><div class="feat-icon">📋</div> Cadastro completo de consórcios</li>
+                            <li><div class="feat-icon">✅</div> Controle de parcelas pagas e quitadas</li>
+                            <li><div class="feat-icon">💳</div> Gestão de crédito disponível</li>
+                            <li><div class="feat-icon">📊</div> Dashboard interativo com gráficos</li>
+                            <li><div class="feat-icon">🔒</div> Backup automático do banco de dados</li>
+                        </ul>
+                    </div>
+                    <div class="sim-box">
+                        <h4>Simulação de Parcela</h4>
+                        <input class="sim-input" type="number" id="valorBem" placeholder="Valor do bem (R$)">
+                        <input class="sim-input" type="number" id="numParcelas" placeholder="Número de parcelas" value="60">
+                        <button class="sim-btn" onclick="simularParcela()">📊 Simular parcela</button>
+                        <div class="sim-result" id="resultadoSimulacao">Preencha os valores acima para simular</div>
+                    </div>
+                </div>
+                <div class="consorcio-footer">
+                    <a href="https://wa.me/554488464080?text=Olá!%20Tenho%20interesse%20no%20Sistema%20de%20Gerenciamento%20de%20Consórcios" target="_blank" class="btn-primary">💬 Solicitar demonstração</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXCEL EMBED -->
+    <div id="excel-unifier" class="embed-wrap">
+        <div class="embed-bar">
+            <span>🔧 LM Unificador de Excel — Ferramenta Gratuita</span>
+            <a href="https://uniciacaexcel-wa33jeh6gszmhbppeqrbep.streamlit.app/" class="btn-embed" target="_blank">↗ Abrir em nova aba</a>
+        </div>
+        <div class="embed-notice">⏳ O aplicativo pode levar 30–60 segundos para inicializar. Aguarde enquanto carrega.</div>
+        <iframe src="https://uniciacaexcel-wa33jeh6gszmhbppeqrbep.streamlit.app/?embed=true" title="Unificador de Excel"></iframe>
+    </div>
+
+    <!-- BUSINESS SOLUTIONS -->
+    <section id="business">
+        <div class="container">
+            <div class="section-eyebrow">🛠️ Sob medida</div>
+            <h2 class="section-title">Soluções Administrativas</h2>
+            <p class="section-sub" style="color:rgba(255,255,255,.45)">Desenvolvemos sistemas personalizados para automatizar e escalar o seu negócio.</p>
             <div class="solutions-grid">
-                <div class="solution-card"><div class="solution-icon">📊</div><h3>Planilhas Inteligentes</h3><p>Automação e dashboards.</p><a href="https://wa.me/554488464080" class="solution-whatsapp">Orçamento</a></div>
-                <div class="solution-card"><div class="solution-icon">💰</div><h3>Sistema Financeiro</h3><p>Fluxo de caixa, DRE.</p><a href="https://wa.me/554488464080" class="solution-whatsapp">Orçamento</a></div>
-                <div class="solution-card"><div class="solution-icon">👥</div><h3>Sistema de RH</h3><p>Gestão de ponto e folha.</p><a href="https://wa.me/554488464080" class="solution-whatsapp">Orçamento</a></div>
-            </div>
-        </section>
-
-        <!-- Criação de Sites com Demo -->
-        <section class="websites-section" id="sites">
-            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
-                <div class="section-head reveal" style="margin-bottom: 3rem;">
-                    <div class="section-tag" style="display: inline-block; background: rgba(124,109,250,0.1); color: #a78bfa; border: 1px solid rgba(124,109,250,0.25); padding: 4px 14px; border-radius: 50px; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 1rem;">Web Design</div>
-                    <h2 style="font-family: 'Segoe UI', 'Syne', sans-serif; font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 800; letter-spacing: -1px; color: #333;">Criação de Sites Profissionais</h2>
-                    <p style="color: #4a5568; max-width: 520px; margin: .75rem auto 0;">Clique em "Ver exemplo" para visualizar um site completo funcionando — desktop e mobile</p>
+                <div class="sol-card">
+                    <div class="sol-icon">📊</div>
+                    <h3>Planilhas Inteligentes</h3>
+                    <p>Automação de processos, dashboards e relatórios dinâmicos com Excel e Google Sheets.</p>
+                    <a href="https://wa.me/554488464080?text=Preciso%20de%20uma%20planilha%20inteligente" target="_blank" class="btn-sol">💬 Orçamento</a>
                 </div>
-                <div class="websites-grid">
-                    <!-- CARD 1: RESTAURANTE -->
-                    <div class="website-card">
-                        <div class="website-preview" style="background: linear-gradient(135deg,#1a0a05,#3d1508);">🍕 Restaurante</div>
+                <div class="sol-card">
+                    <div class="sol-icon">💰</div>
+                    <h3>Sistema Financeiro</h3>
+                    <p>Fluxo de caixa, DRE, contas a pagar/receber e conciliação bancária automatizados.</p>
+                    <a href="https://wa.me/554488464080?text=Preciso%20de%20um%20sistema%20financeiro" target="_blank" class="btn-sol">💬 Orçamento</a>
+                </div>
+                <div class="sol-card">
+                    <div class="sol-icon">👥</div>
+                    <h3>Sistema de RH</h3>
+                    <p>Gestão de ponto, folha de pagamento, férias e controle de colaboradores.</p>
+                    <a href="https://wa.me/554488464080?text=Preciso%20de%20um%20sistema%20de%20RH" target="_blank" class="btn-sol">💬 Orçamento</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SITES -->
+    <section id="sites">
+        <div class="container">
+            <div class="section-eyebrow">🌐 Web Design</div>
+            <h2 class="section-title">Criação de Sites Profissionais</h2>
+            <p class="section-sub">Clique em "Ver exemplo" para visualizar o layout completo — desktop e mobile.</p>
+            <div class="sites-grid">
+                <div class="site-card">
+                    <div class="site-thumb" style="background:linear-gradient(135deg,#1a0a05,#3d1508);color:#ff6b35;">🍕 Restaurante</div>
+                    <div class="site-body">
                         <h3>Site para Restaurante</h3>
-                        <p>Cardápio digital, reservas online, galeria de fotos e localização integrada.</p>
-                        <div class="price-tag">A partir de R$ 397</div>
-                        <button class="demo-link" onclick="abrirDemo('restaurante')">👁 Ver exemplo completo</button>
+                        <p>Cardápio digital, reservas online, galeria e localização.</p>
+                        <div class="site-price">A partir de R$ 397</div>
+                        <button class="btn-demo" onclick="abrirDemo('restaurante')">👁 Ver exemplo completo</button>
                     </div>
-
-                    <!-- CARD 2: LANDING PAGE -->
-                    <div class="website-card">
-                        <div class="website-preview" style="background:linear-gradient(135deg,#0a0a15,#1a0a3a);">⚡ Landing Page</div>
+                </div>
+                <div class="site-card">
+                    <div class="site-thumb" style="background:linear-gradient(135deg,#0a0a15,#1a0a3a);color:#a78bfa;">⚡ Landing Page</div>
+                    <div class="site-body">
                         <h3>Landing Page de Vendas</h3>
-                        <p>Página focada em conversão com timer, depoimentos e CTA irresistível.</p>
-                        <div class="price-tag">A partir de R$ 297</div>
-                        <button class="demo-link" onclick="abrirDemo('vendas')">👁 Ver exemplo completo</button>
+                        <p>Página focada em conversão com timer, prova social e CTA.</p>
+                        <div class="site-price">A partir de R$ 297</div>
+                        <button class="btn-demo" onclick="abrirDemo('vendas')">👁 Ver exemplo completo</button>
                     </div>
-
-                    <!-- CARD 3: BARBEARIA -->
-                    <div class="website-card">
-                        <div class="website-preview" style="background:linear-gradient(135deg,#0f0f0f,#1a1a1a);">✂ Barbearia</div>
+                </div>
+                <div class="site-card">
+                    <div class="site-thumb" style="background:linear-gradient(135deg,#0f0f0f,#1a1a1a);color:#d4af37;">✂ Barbearia</div>
+                    <div class="site-body">
                         <h3>Site para Barbearia</h3>
-                        <p>Portfólio de cortes, lista de serviços, preços e agendamento online integrado.</p>
-                        <div class="price-tag">A partir de R$ 347</div>
-                        <button class="demo-link" onclick="abrirDemo('barbearia')">👁 Ver exemplo completo</button>
+                        <p>Portfólio de cortes, serviços, preços e agendamento.</p>
+                        <div class="site-price">A partir de R$ 347</div>
+                        <button class="btn-demo" onclick="abrirDemo('barbearia')">👁 Ver exemplo completo</button>
                     </div>
-
-                    <!-- CARD 4: EMPRESA -->
-                    <div class="website-card">
-                        <div class="website-preview" style="background:linear-gradient(135deg,#f0f4ff,#e8f0fe); color:#333;">🏢 Empresa</div>
+                </div>
+                <div class="site-card">
+                    <div class="site-thumb" style="background:linear-gradient(135deg,#f0f4ff,#e8f0fe);color:#1e40af;">🏢 Empresarial</div>
+                    <div class="site-body">
                         <h3>Site Empresarial</h3>
-                        <p>Apresentação profissional da empresa com serviços, equipe e formulário de contato.</p>
-                        <div class="price-tag">A partir de R$ 397</div>
-                        <button class="demo-link" onclick="abrirDemo('empresa')">👁 Ver exemplo completo</button>
+                        <p>Apresentação institucional com serviços e formulário.</p>
+                        <div class="site-price">A partir de R$ 397</div>
+                        <button class="btn-demo" onclick="abrirDemo('empresa')">👁 Ver exemplo completo</button>
                     </div>
-
-                    <!-- CARD 5: CATÁLOGO / LOJA -->
-                    <div class="website-card">
-                        <div class="website-preview" style="background:#fff8f0; color:#e67e22;">🛒 Catálogo</div>
+                </div>
+                <div class="site-card">
+                    <div class="site-thumb" style="background:#fff8f0;color:#e67e22;">🛒 Catálogo</div>
+                    <div class="site-body">
                         <h3>Catálogo / Loja Online</h3>
-                        <p>Vitrine digital com produtos, preços, filtros e integração com WhatsApp.</p>
-                        <div class="price-tag">A partir de R$ 497</div>
-                        <button class="demo-link" onclick="abrirDemo('catalogo')">👁 Ver exemplo completo</button>
+                        <p>Vitrine digital com produtos, filtros e WhatsApp.</p>
+                        <div class="site-price">A partir de R$ 497</div>
+                        <button class="btn-demo" onclick="abrirDemo('catalogo')">👁 Ver exemplo completo</button>
                     </div>
-
-                    <!-- CARD 6: PORTFÓLIO -->
-                    <div class="website-card">
-                        <div class="website-preview" style="background:linear-gradient(135deg,#0a1a0a,#0f2a0f);">🎨 Portfólio</div>
+                </div>
+                <div class="site-card">
+                    <div class="site-thumb" style="background:linear-gradient(135deg,#0a1a0a,#0f2a0f);color:#34d399;">🎨 Portfólio</div>
+                    <div class="site-body">
                         <h3>Site de Portfólio</h3>
-                        <p>Apresentação pessoal ou profissional com galeria de projetos e formulário de contato.</p>
-                        <div class="price-tag">A partir de R$ 347</div>
-                        <button class="demo-link" onclick="abrirDemo('portfolio')">👁 Ver exemplo completo</button>
+                        <p>Apresentação pessoal com galeria e contato.</p>
+                        <div class="site-price">A partir de R$ 347</div>
+                        <button class="btn-demo" onclick="abrirDemo('portfolio')">👁 Ver exemplo completo</button>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Depoimentos -->
-        <section class="testimonials" id="testimonials">
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-eyebrow">💬 Depoimentos</div>
             <h2 class="section-title">O que nossos clientes dizem</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
+            <p class="section-sub">Histórias reais de quem já usa nossas soluções.</p>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <div class="stars">★★★★★</div>
                     <p>"O sistema financeiro que desenvolveram para minha empresa otimizou 80% do tempo que gastava com planilhas. Recomendo!"</p>
-                    <div class="testimonial-author">- Carlos Eduardo, Empresário</div>
+                    <div class="testi-author">Carlos Eduardo — Empresário</div>
                 </div>
-                <div class="testimonial-card">
+                <div class="testi-card">
+                    <div class="stars">★★★★★</div>
                     <p>"O sistema de Gerenciamento de Consórcios revolucionou minha administração. Dashboard completo e fácil de usar!"</p>
-                    <div class="testimonial-author">- Mariana Silva, Administradora de Consórcios</div>
+                    <div class="testi-author">Mariana Silva — Administradora de Consórcios</div>
                 </div>
-                <div class="testimonial-card">
-                    <p>"O AgendaPro transformou minha barbearia. Nunca foi tão fácil gerenciar agendamentos e clientes. Ferramenta incrível!"</p>
-                    <div class="testimonial-author">- Ricardo Mendes, Empresário</div>
-                </div>
-                <div class="testimonial-card">
+                <div class="testi-card">
+                    <div class="stars">★★★★★</div>
                     <p>"Aguardando ansiosamente o lançamento do CreditFlow! A prévia que vi está fantástica, vai revolucionar a gestão de empréstimos."</p>
-                    <div class="testimonial-author">- Cliente em espera</div>
+                    <div class="testi-author">Ricardo Mendes — Cliente em espera</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Próximos Lançamentos -->
-        <section class="featured-product" style="margin-top: 40px;">
+    <!-- UPCOMING -->
+    <section id="upcoming">
+        <div class="container">
+            <div class="section-eyebrow">🔭 Em breve</div>
             <h2 class="section-title">Próximos Lançamentos</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💰</div>
-                    <h3 style="margin-bottom: 1rem;">CreditFlow <span class="badge-dev">Em desenvolvimento</span></h3>
+            <p class="section-sub" style="margin-bottom:40px">Acompanhe o que está chegando.</p>
+            <div class="upcoming-grid">
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">💰</div>
+                    <h3>CreditFlow</h3>
                     <p>Gestão inteligente de empréstimos privados com automação de avisos via WhatsApp e controle total de inadimplência.</p>
-                    <span style="display: inline-block; background: #ff9800; color: #000; padding: 5px 15px; border-radius: 50px; margin-top: 1rem;">🚧 Em breve</span>
+                    <span class="badge-soon">🚧 Em desenvolvimento</span>
                 </div>
-                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤖</div>
-                    <h3 style="margin-bottom: 1rem;">Assistente Virtual</h3>
-                    <p>Chatbot inteligente para atendimento ao cliente e automação de vendas.</p>
-                    <span style="display: inline-block; background: #e2e8f0; padding: 5px 15px; border-radius: 50px; margin-top: 1rem;">Em breve</span>
+                <div class="upcoming-card">
+                    <div class="upcoming-icon">🤖</div>
+                    <h3>Assistente Virtual</h3>
+                    <p>Chatbot inteligente para atendimento ao cliente e automação de vendas integrado ao WhatsApp.</p>
+                    <span class="badge-soon">Em breve</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- CTA Final -->
-        <section class="cta-section">
+    <!-- CTA -->
+    <div class="cta-band">
+        <div style="position:relative;z-index:1">
             <h2>Pronto para transformar sua empresa?</h2>
             <p>Soluções personalizadas que realmente funcionam para o seu negócio.</p>
-            <a href="https://wa.me/554488464080?text=Olá!%20Quero%20transformar%20minha%20empresa%20com%20soluções%20personalizadas." 
-               class="cta-button" 
-               style="background: white; color: #667eea;"
-               target="_blank">
+            <a href="https://wa.me/554488464080?text=Olá!%20Quero%20transformar%20minha%20empresa%20com%20soluções%20personalizadas." class="btn-cta-white" target="_blank">
                 💬 Fale conosco agora
             </a>
-        </section>
-    </main>
-
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>LM10 Solutions</h4>
-                <p>Soluções completas em tecnologia para seu PC e sua empresa. Desenvolvimento de sistemas SaaS, automação e muito mais.</p>
-                <p style="margin-top: 1rem;">📱 WhatsApp: (44) 98846-4080</p>
-            </div>
-            <div class="footer-section">
-                <h4>Soluções</h4>
-                <a href="#products">AgendaPro</a>
-                <a href="#products">PC Turbo Cleaner PRO</a>
-                <a href="#products">CreditFlow (Em breve)</a>
-                <a href="#free">Unificador Excel Grátis</a>
-                <a href="#consorcio">Gerenciamento de Consórcios</a>
-                <a href="#business">Sistemas Financeiros</a>
-                <a href="#business">Sistemas de RH</a>
-                <a href="#sites">Sites</a>
-            </div>
-            <div class="footer-section">
-                <h4>Contato</h4>
-                <a href="mailto:centralmendes@gmail.com">centralmendes@gmail.com</a>
-                <a href="https://wa.me/554488464080">WhatsApp: (44) 98846-4080</a>
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Termos de Uso</a>
-            </div>
-        </div>
-        <div class="copyright">
-            © 2024 LM10 Solutions. Todos os direitos reservados. | Atendimento: (44) 98846-4080
-        </div>
-    </footer>
-
-    <!-- MODAL PREMIUM PREVIEW -->
-    <div id="demoModal" class="demo-modal" onclick="handleOverlayClick(event)">
-        <div class="demo-content">
-            <div class="demo-header">
-                <div class="demo-left">
-                    <span>🌐 Prévia do Site</span>
-                </div>
-                <div class="demo-controls">
-                    <button onclick="setView('desktop')">💻 Desktop</button>
-                    <button onclick="setView('mobile')">📱 Mobile</button>
-                </div>
-                <div class="demo-right">
-                    <button onclick="fecharDemo()">✖ Fechar</button>
-                </div>
-            </div>
-            <div id="demoLoader" class="demo-loader">
-                <span>⏳ Carregando demonstração...</span>
-            </div>
-            <div class="iframe-wrapper">
-                <iframe id="demoFrame" title="Prévia do site"></iframe>
-            </div>
-            <div class="demo-footer">
-                <a id="btnQuero" href="#" target="_blank" class="btn-primary" style="font-size:1rem;padding:13px 32px;">
-                    🚀 Quero esse modelo
-                </a>
-            </div>
         </div>
     </div>
 
-    <script>
-        function simularParcela() {
-            const valorBem = parseFloat(document.getElementById('valorBem').value);
-            const numParcelas = parseFloat(document.getElementById('numParcelas').value);
-            const resultadoDiv = document.getElementById('resultadoSimulacao');
-            if (isNaN(valorBem) || valorBem <= 0) {
-                resultadoDiv.innerHTML = '⚠️ Insira um valor válido.';
-                return;
-            }
-            const taxaAdm = 0.18;
-            const valorTotal = valorBem * (1 + taxaAdm);
-            const valorParcela = valorTotal / numParcelas;
-            resultadoDiv.innerHTML = `<div>💰 Parcela aproximada: <strong class="valor" style="font-size: 1.5rem;">R$ ${valorParcela.toFixed(2)}</strong></div><small>*Simulação aproximada</small>`;
-        }
+</main>
 
-        const demos = {
-            restaurante: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Restaurante BellaCucina</title><style>body{font-family:Arial;margin:0;padding:0;background:#1a1a1a;color:#fff;text-align:center;padding:50px} h1{color:#ff6b35}</style></head><body><h1>🍕 BellaCucina Restaurante</h1><p>Site profissional para restaurante com cardápio digital e reservas online.</p><p style="color:#ff6b35">🔧 Em desenvolvimento - Entre em contato para mais detalhes!</p><a href="#" style="color:#ff6b35">Voltar</a></body></html>`,
-            vendas: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Landing Page</title><style>body{font-family:Arial;margin:0;padding:0;background:#0a0a2e;color:#fff;text-align:center;padding:50px} h1{color:#a78bfa}</style></head><body><h1>⚡ Landing Page de Vendas</h1><p>Página de alta conversão com design moderno e CTA estratégico.</p><p style="color:#a78bfa">🎯 Pronta para impulsionar suas vendas!</p></body></html>`,
-            barbearia: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Barbearia Kings</title><style>body{font-family:Arial;margin:0;padding:0;background:#111;color:#fff;text-align:center;padding:50px} h1{color:#d4af37}</style></head><body><h1>✂ Kings Barber Shop</h1><p>Site completo para barbearia com agendamento online.</p><p style="color:#d4af37">💈 Agende seu horário agora mesmo!</p></body></html>`,
-            empresa: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TechCorp</title><style>body{font-family:Arial;margin:0;padding:0;background:#f0f4ff;color:#1e293b;text-align:center;padding:50px} h1{color:#1e40af}</style></head><body><h1>🏢 TechCorp</h1><p>Site empresarial profissional para sua empresa.</p><p style="color:#1e40af">💼 Soluções que transformam negócios</p></body></html>`,
-            catalogo: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ModaStyle</title><style>body{font-family:Arial;margin:0;padding:0;background:#fff8f0;color:#333;text-align:center;padding:50px} h1{color:#e67e22}</style></head><body><h1>🛒 ModaStyle</h1><p>Catálogo virtual e loja online com integração WhatsApp.</p><p style="color:#e67e22">👗 Moda com estilo e praticidade</p></body></html>`,
-            portfolio: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Portfólio</title><style>body{font-family:Arial;margin:0;padding:0;background:#0a1a0a;color:#fff;text-align:center;padding:50px} h1{color:#34d399}</style></head><body><h1>🎨 Portfólio Criativo</h1><p>Site de portfólio profissional para mostrar seu trabalho.</p><p style="color:#34d399">✨ Transformo ideias em experiências digitais</p></body></html>`
-        };
+<footer id="contact">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="logo">LM<span>10</span> Solutions</div>
+            <p>Soluções completas em tecnologia para o seu PC e a sua empresa. Desenvolvimento de sistemas SaaS, automação e muito mais.</p>
+            <div class="phone">📱 WhatsApp: (44) 98846-4080</div>
+        </div>
+        <div>
+            <h5>Soluções</h5>
+            <a href="#products">PC Turbo Cleaner PRO</a>
+            <a href="#products">CreditFlow (Em breve)</a>
+            <a href="#free">Unificador Excel Grátis</a>
+            <a href="#consorcio">Gerenciamento de Consórcios</a>
+            <a href="#business">Sistemas Financeiros</a>
+            <a href="#business">Sistemas de RH</a>
+            <a href="#sites">Sites</a>
+        </div>
+        <div>
+            <h5>Contato</h5>
+            <a href="mailto:centralmendes@gmail.com">centralmendes@gmail.com</a>
+            <a href="https://wa.me/554488464080">WhatsApp: (44) 98846-4080</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+        </div>
+    </div>
+    <div class="footer-line">© 2024 LM10 Solutions. Todos os direitos reservados.</div>
+</footer>
 
-        function abrirDemo(tipo) {
-            const modal = document.getElementById('demoModal');
-            const frame = document.getElementById('demoFrame');
-            const loader = document.getElementById('demoLoader');
-            const btn = document.getElementById('btnQuero');
-            frame.classList.remove('mobile-view');
-            modal.style.display = 'flex';
-            loader.style.display = 'block';
-            frame.srcdoc = demos[tipo] || demos.vendas;
-            const msgs = {
-                restaurante: 'Quero%20um%20site%20para%20meu%20restaurante',
-                vendas: 'Quero%20uma%20Landing%20Page%20de%20vendas',
-                barbearia: 'Quero%20um%20site%20para%20minha%20barbearia',
-                empresa: 'Quero%20um%20site%20empresarial',
-                catalogo: 'Quero%20um%20catálogo%20online',
-                portfolio: 'Quero%20um%20site%20de%20portfólio'
-            };
-            btn.href = `https://wa.me/554488464080?text=${msgs[tipo] || msgs.vendas}`;
-            frame.onload = () => { loader.style.display = 'none'; };
-        }
+<!-- DEMO MODAL -->
+<div id="demoModal" class="modal-overlay" onclick="handleOverlayClick(event)">
+    <div class="modal-box">
+        <div class="modal-bar">
+            <span>🌐 Prévia do Site</span>
+            <div style="display:flex;gap:8px;align-items:center">
+                <div class="modal-controls">
+                    <button onclick="setView('desktop')">💻 Desktop</button>
+                    <button onclick="setView('mobile')">📱 Mobile</button>
+                </div>
+                <button class="modal-close" onclick="fecharDemo()">✕ Fechar</button>
+            </div>
+        </div>
+        <div id="demoLoader" class="modal-loader">⏳ Carregando demonstração...</div>
+        <div class="modal-frame-wrap">
+            <iframe id="demoFrame" title="Prévia do site"></iframe>
+        </div>
+        <div class="modal-foot">
+            <a id="btnQuero" href="#" target="_blank" class="btn-modal-cta">🚀 Quero esse modelo</a>
+        </div>
+    </div>
+</div>
 
-        function fecharDemo() {
-            const modal = document.getElementById('demoModal');
-            const frame = document.getElementById('demoFrame');
-            modal.style.display = 'none';
-            frame.srcdoc = '';
-            frame.classList.remove('mobile-view');
-        }
+<script>
+    // Header scroll
+    window.addEventListener('scroll', () => {
+        document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 10);
+    });
 
-        function handleOverlayClick(e) {
-            if (e.target === document.getElementById('demoModal')) {
-                fecharDemo();
-            }
-        }
+    // Simulador
+    function simularParcela() {
+        const valorBem = parseFloat(document.getElementById('valorBem').value);
+        const numParcelas = parseFloat(document.getElementById('numParcelas').value);
+        const el = document.getElementById('resultadoSimulacao');
+        if (isNaN(valorBem) || valorBem <= 0) { el.textContent = '⚠️ Insira um valor válido.'; return; }
+        const valorTotal = valorBem * 1.18;
+        const parcela = (valorTotal / numParcelas).toFixed(2);
+        el.innerHTML = `Parcela aproximada<br><strong class="big">R$ ${parcela}</strong><small style="color:rgba(255,255,255,.4)">*Simulação com taxa adm. de 18%</small>`;
+    }
+    document.querySelectorAll('.sim-input').forEach(i => i.addEventListener('keypress', e => { if(e.key==='Enter') simularParcela(); }));
 
-        function setView(type) {
-            const frame = document.getElementById('demoFrame');
-            if (type === 'mobile') {
-                frame.classList.add('mobile-view');
-            } else {
-                frame.classList.remove('mobile-view');
-            }
-        }
+    // Demo modal
+    const demos = {
+        restaurante: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Restaurante BellaCucina</title><style>body{font-family:Arial;margin:0;background:#1a0a05;color:#fff;text-align:center;padding:60px 20px}h1{color:#ff6b35;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>🍕 BellaCucina</h1><p>Site profissional para restaurante com cardápio digital e reservas online.</p><p style="color:#ff6b35">Entre em contato para ver o demo completo!</p></body></html>`,
+        vendas: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Landing Page</title><style>body{font-family:Arial;margin:0;background:#0a0a2e;color:#fff;text-align:center;padding:60px 20px}h1{color:#a78bfa;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>⚡ Landing Page de Vendas</h1><p>Página de alta conversão com design moderno e CTA estratégico.</p></body></html>`,
+        barbearia: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Barbearia Kings</title><style>body{font-family:Arial;margin:0;background:#111;color:#fff;text-align:center;padding:60px 20px}h1{color:#d4af37;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>✂ Kings Barber Shop</h1><p>Site completo com agendamento online e portfólio de cortes.</p></body></html>`,
+        empresa: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TechCorp</title><style>body{font-family:Arial;margin:0;background:#f0f4ff;color:#1e293b;text-align:center;padding:60px 20px}h1{color:#1e40af;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>🏢 TechCorp</h1><p>Site empresarial profissional com serviços e formulário de contato.</p></body></html>`,
+        catalogo: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ModaStyle</title><style>body{font-family:Arial;margin:0;background:#fff8f0;color:#333;text-align:center;padding:60px 20px}h1{color:#e67e22;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>🛒 ModaStyle</h1><p>Catálogo virtual com integração WhatsApp e filtros de produto.</p></body></html>`,
+        portfolio: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Portfólio</title><style>body{font-family:Arial;margin:0;background:#0a1a0a;color:#fff;text-align:center;padding:60px 20px}h1{color:#34d399;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>🎨 Portfólio Criativo</h1><p>Apresentação pessoal com galeria de projetos e formulário de contato.</p></body></html>`
+    };
+    const msgs = { restaurante:'Quero%20um%20site%20para%20meu%20restaurante', vendas:'Quero%20uma%20Landing%20Page%20de%20vendas', barbearia:'Quero%20um%20site%20para%20minha%20barbearia', empresa:'Quero%20um%20site%20empresarial', catalogo:'Quero%20um%20catálogo%20online', portfolio:'Quero%20um%20site%20de%20portfólio' };
 
-        document.querySelectorAll('.simulador input').forEach(input => {
-            input.addEventListener('keypress', (e) => { if(e.key === 'Enter') simularParcela(); });
-        });
-    </script>
+    function abrirDemo(tipo) {
+        const modal = document.getElementById('demoModal');
+        const frame = document.getElementById('demoFrame');
+        const loader = document.getElementById('demoLoader');
+        const btn = document.getElementById('btnQuero');
+        frame.classList.remove('mobile');
+        modal.classList.add('open');
+        loader.style.display = 'block';
+        frame.srcdoc = demos[tipo];
+        btn.href = `https://wa.me/554488464080?text=${msgs[tipo]}`;
+        frame.onload = () => { loader.style.display = 'none'; };
+    }
+    function fecharDemo() {
+        document.getElementById('demoModal').classList.remove('open');
+        document.getElementById('demoFrame').srcdoc = '';
+    }
+    function handleOverlayClick(e) { if(e.target === document.getElementById('demoModal')) fecharDemo(); }
+    function setView(t) { document.getElementById('demoFrame').classList.toggle('mobile', t === 'mobile'); }
+</script>
 </body>
 </html>
