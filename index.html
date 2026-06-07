@@ -482,7 +482,7 @@
         }
         .btn-sol:hover { background: #1dab52; transform: translateY(-1px); }
 
-        /* ── SITES (NOVO MODELO ADICIONADO) ── */
+        /* ── SITES ── */
         #sites { background: var(--mist); }
         .sites-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;
@@ -515,8 +515,23 @@
             border: 1px solid #e0e2ed;
             font-weight: 600; font-size: .85rem;
             cursor: pointer; transition: background .2s, border-color .2s;
+            text-decoration: none;
         }
         .btn-demo:hover { background: #e8eaf2; border-color: #c4c9e0; }
+        
+        /* Botão para link direto (acessar site) */
+        .btn-site {
+            display: block; text-align: center;
+            padding: 10px; border-radius: 8px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white !important;
+            border: none;
+            font-weight: 700; font-size: .85rem;
+            text-decoration: none;
+            transition: transform .2s, box-shadow .2s;
+            box-shadow: 0 2px 8px rgba(59,91,219,.3);
+        }
+        .btn-site:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(59,91,219,.4); background: linear-gradient(135deg, #2f4bbf, #4a6cea); }
 
         /* ── TESTIMONIALS ── */
         #testimonials { background: var(--white); }
@@ -610,66 +625,6 @@
             padding-top: 24px; border-top: 1px solid rgba(255,255,255,.07);
             text-align: center; font-size: .78rem; color: rgba(255,255,255,.3);
         }
-
-        /* ── MODAL ── */
-        .modal-overlay {
-            display: none; position: fixed; inset: 0; z-index: 9000;
-            background: rgba(11,14,23,.88); backdrop-filter: blur(6px);
-            align-items: center; justify-content: center;
-        }
-        .modal-overlay.open { display: flex; }
-        .modal-box {
-            width: 94%; max-width: 1100px; height: 92vh;
-            background: #0f1220;
-            border-radius: 16px; overflow: hidden;
-            display: flex; flex-direction: column;
-            border: 1px solid rgba(255,255,255,.08);
-        }
-        .modal-bar {
-            background: #1a1e2e;
-            padding: 12px 20px;
-            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
-            border-bottom: 1px solid rgba(255,255,255,.07);
-        }
-        .modal-bar span { color: rgba(255,255,255,.7); font-size: .85rem; font-weight: 500; }
-        .modal-controls { display: flex; gap: 8px; }
-        .modal-controls button, .modal-close {
-            background: rgba(255,255,255,.08);
-            border: 1px solid rgba(255,255,255,.12);
-            color: white; padding: 7px 16px; border-radius: 8px;
-            font-size: .8rem; font-weight: 600; cursor: pointer;
-            font-family: 'DM Sans', sans-serif;
-            transition: background .2s;
-        }
-        .modal-controls button:hover, .modal-close:hover { background: rgba(255,255,255,.16); }
-        .modal-loader {
-            text-align: center; padding: 12px; font-size: .8rem;
-            color: rgba(255,255,255,.5); background: #000;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse { 0%,100%{opacity:.5} 50%{opacity:1} }
-        .modal-frame-wrap {
-            flex: 1; background: #000;
-            display: flex; align-items: center; justify-content: center;
-        }
-        #demoFrame {
-            width: 100%; height: 100%; border: none;
-            background: white;
-        }
-        #demoFrame.mobile { width: 375px; height: 667px; border-radius: 16px; }
-        .modal-foot {
-            padding: 14px 20px; background: #111826;
-            border-top: 1px solid rgba(255,255,255,.07);
-            text-align: center;
-        }
-        .btn-modal-cta {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 12px 30px; border-radius: 10px;
-            background: #25D366; color: white; text-decoration: none;
-            font-weight: 700; font-size: .95rem;
-            transition: background .2s, transform .2s;
-        }
-        .btn-modal-cta:hover { background: #1dab52; transform: translateY(-1px); }
 
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
@@ -884,12 +839,12 @@
         </div>
     </section>
 
-    <!-- SITES (COM O NOVO MODELO ESTÉTICA AUTOMOTIVA - CARREGANDO O ARQUIVO pedriho plimebto 2.html) -->
+    <!-- SITES - NOVO SITE PEDRINHU POLIMENTOS ADICIONADO COMO LINK DIRETO -->
     <section id="sites">
         <div class="container">
             <div class="section-eyebrow">🌐 Web Design</div>
             <h2 class="section-title">Criação de Sites Profissionais</h2>
-            <p class="section-sub">Clique em "Ver exemplo" para visualizar o layout completo — desktop e mobile.</p>
+            <p class="section-sub">Sites modernos, responsivos e otimizados para conversão.</p>
             <div class="sites-grid">
                 <div class="site-card">
                     <div class="site-thumb" style="background:linear-gradient(135deg,#1a0a05,#3d1508);color:#ff6b35;">🍕 Restaurante</div>
@@ -897,7 +852,7 @@
                         <h3>Site para Restaurante</h3>
                         <p>Cardápio digital, reservas online, galeria e localização.</p>
                         <div class="site-price">A partir de R$ 397</div>
-                        <button class="btn-demo" onclick="abrirDemo('restaurante')">👁 Ver exemplo completo</button>
+                        <a href="#" class="btn-demo" onclick="event.preventDefault(); alert('Demonstração disponível mediante contato via WhatsApp.');">👁 Ver exemplo</a>
                     </div>
                 </div>
                 <div class="site-card">
@@ -906,7 +861,7 @@
                         <h3>Landing Page de Vendas</h3>
                         <p>Página focada em conversão com timer, prova social e CTA.</p>
                         <div class="site-price">A partir de R$ 297</div>
-                        <button class="btn-demo" onclick="abrirDemo('vendas')">👁 Ver exemplo completo</button>
+                        <a href="#" class="btn-demo" onclick="event.preventDefault(); alert('Demonstração disponível mediante contato via WhatsApp.');">👁 Ver exemplo</a>
                     </div>
                 </div>
                 <div class="site-card">
@@ -915,7 +870,7 @@
                         <h3>Site para Barbearia</h3>
                         <p>Portfólio de cortes, serviços, preços e agendamento.</p>
                         <div class="site-price">A partir de R$ 347</div>
-                        <button class="btn-demo" onclick="abrirDemo('barbearia')">👁 Ver exemplo completo</button>
+                        <a href="#" class="btn-demo" onclick="event.preventDefault(); alert('Demonstração disponível mediante contato via WhatsApp.');">👁 Ver exemplo</a>
                     </div>
                 </div>
                 <div class="site-card">
@@ -924,7 +879,7 @@
                         <h3>Site Empresarial</h3>
                         <p>Apresentação institucional com serviços e formulário.</p>
                         <div class="site-price">A partir de R$ 397</div>
-                        <button class="btn-demo" onclick="abrirDemo('empresa')">👁 Ver exemplo completo</button>
+                        <a href="#" class="btn-demo" onclick="event.preventDefault(); alert('Demonstração disponível mediante contato via WhatsApp.');">👁 Ver exemplo</a>
                     </div>
                 </div>
                 <div class="site-card">
@@ -933,7 +888,7 @@
                         <h3>Catálogo / Loja Online</h3>
                         <p>Vitrine digital com produtos, filtros e WhatsApp.</p>
                         <div class="site-price">A partir de R$ 497</div>
-                        <button class="btn-demo" onclick="abrirDemo('catalogo')">👁 Ver exemplo completo</button>
+                        <a href="#" class="btn-demo" onclick="event.preventDefault(); alert('Demonstração disponível mediante contato via WhatsApp.');">👁 Ver exemplo</a>
                     </div>
                 </div>
                 <div class="site-card">
@@ -942,17 +897,17 @@
                         <h3>Site de Portfólio</h3>
                         <p>Apresentação pessoal com galeria e contato.</p>
                         <div class="site-price">A partir de R$ 347</div>
-                        <button class="btn-demo" onclick="abrirDemo('portfolio')">👁 Ver exemplo completo</button>
+                        <a href="#" class="btn-demo" onclick="event.preventDefault(); alert('Demonstração disponível mediante contato via WhatsApp.');">👁 Ver exemplo</a>
                     </div>
                 </div>
-                <!-- NOVO CARD: ESTÉTICA AUTOMOTIVA PREMIUM (CARREGA O ARQUIVO REAL) -->
+                <!-- NOVO SITE REAL: PEDRINHU POLIMENTOS ESPECIAIS -->
                 <div class="site-card">
                     <div class="site-thumb" style="background:linear-gradient(135deg,#0D0D0D,#1A1A1A);color:#C1121F;">🚗 Estética Automotiva</div>
                     <div class="site-body">
                         <h3>Pedrinhu Polimentos Especiais</h3>
                         <p>Site premium para estética automotiva com vitrificação, polimento técnico, antes/depois e galeria de resultados.</p>
-                        <div class="site-price">A partir de R$ 497</div>
-                        <button class="btn-demo" onclick="abrirDemo('automotiva')">👁 Ver exemplo completo</button>
+                        <div class="site-price">Site Completo</div>
+                        <a href="pedriho plimebto 2.html" target="_blank" class="btn-site">🚀 Acessar Site Completo →</a>
                     </div>
                 </div>
             </div>
@@ -1049,36 +1004,13 @@
     <div class="footer-line">© 2024 LM10 Solutions. Todos os direitos reservados.</div>
 </footer>
 
-<!-- DEMO MODAL -->
-<div id="demoModal" class="modal-overlay" onclick="handleOverlayClick(event)">
-    <div class="modal-box">
-        <div class="modal-bar">
-            <span>🌐 Prévia do Site</span>
-            <div style="display:flex;gap:8px;align-items:center">
-                <div class="modal-controls">
-                    <button onclick="setView('desktop')">💻 Desktop</button>
-                    <button onclick="setView('mobile')">📱 Mobile</button>
-                </div>
-                <button class="modal-close" onclick="fecharDemo()">✕ Fechar</button>
-            </div>
-        </div>
-        <div id="demoLoader" class="modal-loader">⏳ Carregando demonstração...</div>
-        <div class="modal-frame-wrap">
-            <iframe id="demoFrame" title="Prévia do site"></iframe>
-        </div>
-        <div class="modal-foot">
-            <a id="btnQuero" href="#" target="_blank" class="btn-modal-cta">🚀 Quero esse modelo</a>
-        </div>
-    </div>
-</div>
-
 <script>
     // Header scroll
     window.addEventListener('scroll', () => {
         document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 10);
     });
 
-    // Simulador
+    // Simulador de parcelas
     function simularParcela() {
         const valorBem = parseFloat(document.getElementById('valorBem').value);
         const numParcelas = parseFloat(document.getElementById('numParcelas').value);
@@ -1089,86 +1021,6 @@
         el.innerHTML = `Parcela aproximada<br><strong class="big">R$ ${parcela}</strong><small style="color:rgba(255,255,255,.4)">*Simulação com taxa adm. de 18%</small>`;
     }
     document.querySelectorAll('.sim-input').forEach(i => i.addEventListener('keypress', e => { if(e.key==='Enter') simularParcela(); }));
-
-    // Mapeamento de URLs para os demos (para os outros tipos usa srcdoc inline, para automotiva carrega o arquivo real)
-    const demoUrls = {
-        automotiva: 'pedriho plimebto 2.html' // arquivo real na mesma pasta
-    };
-
-    // Conteúdos inline para os outros modelos (mantido igual)
-    const inlineDemos = {
-        restaurante: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Restaurante BellaCucina</title><style>body{font-family:Arial;margin:0;background:#1a0a05;color:#fff;text-align:center;padding:60px 20px}h1{color:#ff6b35;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>🍕 BellaCucina</h1><p>Site profissional para restaurante com cardápio digital e reservas online.</p><p style="color:#ff6b35">Entre em contato para ver o demo completo!</p></body></html>`,
-        vendas: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Landing Page</title><style>body{font-family:Arial;margin:0;background:#0a0a2e;color:#fff;text-align:center;padding:60px 20px}h1{color:#a78bfa;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>⚡ Landing Page de Vendas</h1><p>Página de alta conversão com design moderno e CTA estratégico.</p></body></html>`,
-        barbearia: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Barbearia Kings</title><style>body{font-family:Arial;margin:0;background:#111;color:#fff;text-align:center;padding:60px 20px}h1{color:#d4af37;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>✂ Kings Barber Shop</h1><p>Site completo com agendamento online e portfólio de cortes.</p></body></html>`,
-        empresa: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TechCorp</title><style>body{font-family:Arial;margin:0;background:#f0f4ff;color:#1e293b;text-align:center;padding:60px 20px}h1{color:#1e40af;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>🏢 TechCorp</h1><p>Site empresarial profissional com serviços e formulário de contato.</p></body></html>`,
-        catalogo: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ModaStyle</title><style>body{font-family:Arial;margin:0;background:#fff8f0;color:#333;text-align:center;padding:60px 20px}h1{color:#e67e22;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>🛒 ModaStyle</h1><p>Catálogo virtual com integração WhatsApp e filtros de produto.</p></body></html>`,
-        portfolio: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Portfólio</title><style>body{font-family:Arial;margin:0;background:#0a1a0a;color:#fff;text-align:center;padding:60px 20px}h1{color:#34d399;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>🎨 Portfólio Criativo</h1><p>Apresentação pessoal com galeria de projetos e formulário de contato.</p></body></html>`
-    };
-
-    const msgs = { 
-        restaurante:'Quero%20um%20site%20para%20meu%20restaurante', 
-        vendas:'Quero%20uma%20Landing%20Page%20de%20vendas', 
-        barbearia:'Quero%20um%20site%20para%20minha%20barbearia', 
-        empresa:'Quero%20um%20site%20empresarial', 
-        catalogo:'Quero%20um%20catálogo%20online', 
-        portfolio:'Quero%20um%20site%20de%20portfólio',
-        automotiva:'Quero%20um%20site%20profissional%20para%20estética%20automotiva'
-    };
-
-    function abrirDemo(tipo) {
-        const modal = document.getElementById('demoModal');
-        const frame = document.getElementById('demoFrame');
-        const loader = document.getElementById('demoLoader');
-        const btn = document.getElementById('btnQuero');
-        
-        frame.classList.remove('mobile');
-        modal.classList.add('open');
-        loader.style.display = 'block';
-        
-        // Verifica se é o tipo automotiva (carrega arquivo externo)
-        if (tipo === 'automotiva' && demoUrls[tipo]) {
-            frame.src = demoUrls[tipo];
-            // Quando o iframe carregar, esconde o loader
-            frame.onload = () => { 
-                loader.style.display = 'none';
-                // Ajusta título da prévia para indicar que é um site completo
-                document.querySelector('.modal-bar span').innerHTML = '🚗 Pedrinhu Polimentos Especiais — Site Premium';
-            };
-        } else {
-            // Para os demais, usa o conteúdo inline
-            frame.srcdoc = inlineDemos[tipo] || '<html><body><h1>Prévia indisponível</h1></body></html>';
-            frame.src = ''; // limpa qualquer src anterior
-            frame.onload = () => { loader.style.display = 'none'; };
-            document.querySelector('.modal-bar span').innerHTML = '🌐 Prévia do Site';
-        }
-        
-        // Define o link do WhatsApp para orçamento
-        btn.href = `https://wa.me/554488464080?text=${msgs[tipo] || 'Quero%20esse%20modelo%20de%20site'}`;
-    }
-
-    function fecharDemo() {
-        const modal = document.getElementById('demoModal');
-        const frame = document.getElementById('demoFrame');
-        modal.classList.remove('open');
-        // Limpa o src para parar qualquer carregamento
-        frame.src = '';
-        frame.srcdoc = '';
-        // Restaura título padrão para próximas aberturas
-        document.querySelector('.modal-bar span').innerHTML = '🌐 Prévia do Site';
-    }
-
-    function handleOverlayClick(e) { 
-        if(e.target === document.getElementById('demoModal')) fecharDemo(); 
-    }
-    
-    function setView(t) { 
-        const frame = document.getElementById('demoFrame');
-        if (t === 'mobile') {
-            frame.classList.add('mobile');
-        } else {
-            frame.classList.remove('mobile');
-        }
-    }
 </script>
 </body>
 </html>
