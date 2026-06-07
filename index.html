@@ -482,7 +482,7 @@
         }
         .btn-sol:hover { background: #1dab52; transform: translateY(-1px); }
 
-        /* ── SITES ── */
+        /* ── SITES (NOVO MODELO ADICIONADO) ── */
         #sites { background: var(--mist); }
         .sites-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;
@@ -757,8 +757,6 @@
             <h2 class="section-title">Soluções prontas para usar</h2>
             <p class="section-sub">Software desenvolvido com foco em resultados reais para o seu dia a dia.</p>
             <div class="products-grid">
-
-                <!-- PC Turbo Cleaner PRO -->
                 <div class="product-card">
                     <div class="product-thumb thumb-pc">
                         <span>⚡</span>
@@ -784,7 +782,6 @@
                     </div>
                 </div>
 
-                <!-- CreditFlow -->
                 <div class="product-card">
                     <div class="product-thumb thumb-credit">
                         <span>💰</span>
@@ -807,7 +804,6 @@
                         <a href="https://wa.me/554488464080?text=Olá!%20Tenho%20interesse%20no%20CreditFlow%20em%20desenvolvimento." target="_blank" class="btn-card btn-wa">💬 Quero saber mais →</a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -888,7 +884,7 @@
         </div>
     </section>
 
-    <!-- SITES -->
+    <!-- SITES (COM O NOVO MODELO ESTÉTICA AUTOMOTIVA - CARREGANDO O ARQUIVO pedriho plimebto 2.html) -->
     <section id="sites">
         <div class="container">
             <div class="section-eyebrow">🌐 Web Design</div>
@@ -947,6 +943,16 @@
                         <p>Apresentação pessoal com galeria e contato.</p>
                         <div class="site-price">A partir de R$ 347</div>
                         <button class="btn-demo" onclick="abrirDemo('portfolio')">👁 Ver exemplo completo</button>
+                    </div>
+                </div>
+                <!-- NOVO CARD: ESTÉTICA AUTOMOTIVA PREMIUM (CARREGA O ARQUIVO REAL) -->
+                <div class="site-card">
+                    <div class="site-thumb" style="background:linear-gradient(135deg,#0D0D0D,#1A1A1A);color:#C1121F;">🚗 Estética Automotiva</div>
+                    <div class="site-body">
+                        <h3>Pedrinhu Polimentos Especiais</h3>
+                        <p>Site premium para estética automotiva com vitrificação, polimento técnico, antes/depois e galeria de resultados.</p>
+                        <div class="site-price">A partir de R$ 497</div>
+                        <button class="btn-demo" onclick="abrirDemo('automotiva')">👁 Ver exemplo completo</button>
                     </div>
                 </div>
             </div>
@@ -1084,8 +1090,13 @@
     }
     document.querySelectorAll('.sim-input').forEach(i => i.addEventListener('keypress', e => { if(e.key==='Enter') simularParcela(); }));
 
-    // Demo modal
-    const demos = {
+    // Mapeamento de URLs para os demos (para os outros tipos usa srcdoc inline, para automotiva carrega o arquivo real)
+    const demoUrls = {
+        automotiva: 'pedriho plimebto 2.html' // arquivo real na mesma pasta
+    };
+
+    // Conteúdos inline para os outros modelos (mantido igual)
+    const inlineDemos = {
         restaurante: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Restaurante BellaCucina</title><style>body{font-family:Arial;margin:0;background:#1a0a05;color:#fff;text-align:center;padding:60px 20px}h1{color:#ff6b35;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>🍕 BellaCucina</h1><p>Site profissional para restaurante com cardápio digital e reservas online.</p><p style="color:#ff6b35">Entre em contato para ver o demo completo!</p></body></html>`,
         vendas: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Landing Page</title><style>body{font-family:Arial;margin:0;background:#0a0a2e;color:#fff;text-align:center;padding:60px 20px}h1{color:#a78bfa;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>⚡ Landing Page de Vendas</h1><p>Página de alta conversão com design moderno e CTA estratégico.</p></body></html>`,
         barbearia: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Barbearia Kings</title><style>body{font-family:Arial;margin:0;background:#111;color:#fff;text-align:center;padding:60px 20px}h1{color:#d4af37;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>✂ Kings Barber Shop</h1><p>Site completo com agendamento online e portfólio de cortes.</p></body></html>`,
@@ -1093,26 +1104,71 @@
         catalogo: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ModaStyle</title><style>body{font-family:Arial;margin:0;background:#fff8f0;color:#333;text-align:center;padding:60px 20px}h1{color:#e67e22;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>🛒 ModaStyle</h1><p>Catálogo virtual com integração WhatsApp e filtros de produto.</p></body></html>`,
         portfolio: `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Portfólio</title><style>body{font-family:Arial;margin:0;background:#0a1a0a;color:#fff;text-align:center;padding:60px 20px}h1{color:#34d399;font-size:2rem}p{opacity:.75;margin:16px 0}</style></head><body><h1>🎨 Portfólio Criativo</h1><p>Apresentação pessoal com galeria de projetos e formulário de contato.</p></body></html>`
     };
-    const msgs = { restaurante:'Quero%20um%20site%20para%20meu%20restaurante', vendas:'Quero%20uma%20Landing%20Page%20de%20vendas', barbearia:'Quero%20um%20site%20para%20minha%20barbearia', empresa:'Quero%20um%20site%20empresarial', catalogo:'Quero%20um%20catálogo%20online', portfolio:'Quero%20um%20site%20de%20portfólio' };
+
+    const msgs = { 
+        restaurante:'Quero%20um%20site%20para%20meu%20restaurante', 
+        vendas:'Quero%20uma%20Landing%20Page%20de%20vendas', 
+        barbearia:'Quero%20um%20site%20para%20minha%20barbearia', 
+        empresa:'Quero%20um%20site%20empresarial', 
+        catalogo:'Quero%20um%20catálogo%20online', 
+        portfolio:'Quero%20um%20site%20de%20portfólio',
+        automotiva:'Quero%20um%20site%20profissional%20para%20estética%20automotiva'
+    };
 
     function abrirDemo(tipo) {
         const modal = document.getElementById('demoModal');
         const frame = document.getElementById('demoFrame');
         const loader = document.getElementById('demoLoader');
         const btn = document.getElementById('btnQuero');
+        
         frame.classList.remove('mobile');
         modal.classList.add('open');
         loader.style.display = 'block';
-        frame.srcdoc = demos[tipo];
-        btn.href = `https://wa.me/554488464080?text=${msgs[tipo]}`;
-        frame.onload = () => { loader.style.display = 'none'; };
+        
+        // Verifica se é o tipo automotiva (carrega arquivo externo)
+        if (tipo === 'automotiva' && demoUrls[tipo]) {
+            frame.src = demoUrls[tipo];
+            // Quando o iframe carregar, esconde o loader
+            frame.onload = () => { 
+                loader.style.display = 'none';
+                // Ajusta título da prévia para indicar que é um site completo
+                document.querySelector('.modal-bar span').innerHTML = '🚗 Pedrinhu Polimentos Especiais — Site Premium';
+            };
+        } else {
+            // Para os demais, usa o conteúdo inline
+            frame.srcdoc = inlineDemos[tipo] || '<html><body><h1>Prévia indisponível</h1></body></html>';
+            frame.src = ''; // limpa qualquer src anterior
+            frame.onload = () => { loader.style.display = 'none'; };
+            document.querySelector('.modal-bar span').innerHTML = '🌐 Prévia do Site';
+        }
+        
+        // Define o link do WhatsApp para orçamento
+        btn.href = `https://wa.me/554488464080?text=${msgs[tipo] || 'Quero%20esse%20modelo%20de%20site'}`;
     }
+
     function fecharDemo() {
-        document.getElementById('demoModal').classList.remove('open');
-        document.getElementById('demoFrame').srcdoc = '';
+        const modal = document.getElementById('demoModal');
+        const frame = document.getElementById('demoFrame');
+        modal.classList.remove('open');
+        // Limpa o src para parar qualquer carregamento
+        frame.src = '';
+        frame.srcdoc = '';
+        // Restaura título padrão para próximas aberturas
+        document.querySelector('.modal-bar span').innerHTML = '🌐 Prévia do Site';
     }
-    function handleOverlayClick(e) { if(e.target === document.getElementById('demoModal')) fecharDemo(); }
-    function setView(t) { document.getElementById('demoFrame').classList.toggle('mobile', t === 'mobile'); }
+
+    function handleOverlayClick(e) { 
+        if(e.target === document.getElementById('demoModal')) fecharDemo(); 
+    }
+    
+    function setView(t) { 
+        const frame = document.getElementById('demoFrame');
+        if (t === 'mobile') {
+            frame.classList.add('mobile');
+        } else {
+            frame.classList.remove('mobile');
+        }
+    }
 </script>
 </body>
 </html>
